@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.2.4",
+    "@vercel/kv": "^3.0.0",
+    "fuse.js": "^7.3.0",
+    "next": "^16.2.4",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.5.0",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.2.4",
+    "jest": "^30.3.0",
+    "postcss": "^8.5.12",
+    "tailwindcss": "^4.2.4",
+    "ts-jest": "^29.4.9",
+    "typescript": "^6.0.3"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  }
+}

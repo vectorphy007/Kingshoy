@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#0e0e0e",
+                      "error-container": "#93000a",
+                      "text-muted": "#64748B",
+                      "status-warning": "#B45309",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "surface-variant": "#353435",
+                      "on-secondary": "#2d3038",
+                      "error": "#ffb4ab",
+                      "surface": "#141314",
+                      "primary-fixed-dim": "#c6c6cc",
+                      "surface-dim": "#141314",
+                      "on-secondary-container": "#b6b8c1",
+                      "on-secondary-fixed-variant": "#44474e",
+                      "secondary-container": "#464951",
+                      "inverse-primary": "#5d5e63",
+                      "on-error-container": "#ffdad6",
+                      "secondary": "#c4c6d0",
+                      "on-primary-fixed-variant": "#45474b",
+                      "on-primary-fixed": "#1a1c20",
+                      "background": "#141314",
+                      "on-tertiary": "#3c2f00",
+                      "surface-elevated": "#1C1F26",
+                      "tertiary-container": "#171000",
+                      "on-tertiary-container": "#987900",
+                      "inverse-on-surface": "#313030",
+                      "on-tertiary-fixed": "#241a00",
+                      "on-surface-variant": "#c6c6cb",
+                      "accent-amber": "#FFBF00",
+                      "tertiary-fixed": "#ffe088",
+                      "secondary-fixed-dim": "#c4c6d0",
+                      "on-surface": "#e5e2e1",
+                      "accent-crimson": "#9E1B1B",
+                      "primary": "#c6c6cc",
+                      "surface-stroke": "#2D333D",
+                      "accent-gold": "#D4AF37",
+                      "text-primary": "#F1F5F9",
+                      "surface-tint": "#c6c6cc",
+                      "on-secondary-fixed": "#191c22",
+                      "on-primary": "#2f3035",
+                      "surface-bright": "#3a3939",
+                      "accent-ice": "#7895B2",
+                      "secondary-fixed": "#e0e2ec",
+                      "surface-container-low": "#1c1b1c",
+                      "on-error": "#690005",
+                      "surface-base": "#0F1115",
+                      "outline": "#909095",
+                      "on-primary-container": "#7b7c82",
+                      "text-secondary": "#94A3B8",
+                      "surface-container-high": "#2a2a2a",
+                      "outline-variant": "#45474b",
+                      "primary-container": "#0f1115",
+                      "inverse-surface": "#e5e2e1",
+                      "surface-container": "#201f20",
+                      "on-background": "#e5e2e1",
+                      "primary-fixed": "#e2e2e8",
+                      "surface-container-highest": "#353435",
+                      "tertiary": "#e9c349",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "status-success": "#2D5A27"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container-max-width": "1440px",
+                      "stack-gap-sm": "8px",
+                      "card-padding": "20px",
+                      "section-gap": "48px",
+                      "gutter": "24px",
+                      "stack-gap-md": "16px"
+              },
+              "fontFamily": {
+                      "button-text": ["Manrope"],
+                      "h1-display": ["Manrope"],
+                      "body-md": ["Inter"],
+                      "metadata": ["Inter"],
+                      "h3-card": ["Manrope"],
+                      "h2-section": ["Manrope"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "button-text": ["14px", {"lineHeight": "1", "fontWeight": "600"}],
+                      "h1-display": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "metadata": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                      "h3-card": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "h2-section": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "500"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #0F1115;
+            color: #F1F5F9;
+        }
+    </style>
+</head>
+<body class="antialiased overflow-hidden">
+<!-- SideNavBar (Authority Source: JSON) -->
+<aside class="fixed left-0 top-0 h-full w-64 border-r border-slate-800 bg-[#0F1115] flex flex-col p-4 space-y-4 z-50 shadow-xl shadow-black/50">
+<div class="flex items-center space-x-3 px-2 py-4">
+<div class="w-10 h-10 bg-slate-800 rounded flex items-center justify-center border border-amber-500/30">
+<span class="material-symbols-outlined text-amber-500" data-icon="shield">shield</span>
+</div>
+<div>
+<h2 class="font-['Manrope'] font-bold text-amber-500 text-sm tracking-widest uppercase">LEGION 01</h2>
+<p class="font-['Manrope'] text-[10px] text-slate-500 tracking-tighter">S3 COMMAND</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Active state logic: Member Submission is current page -->
+<a class="flex items-center px-3 py-2.5 space-x-3 rounded transition-colors duration-200 text-slate-400 hover:bg-slate-900/50 hover:text-slate-200" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+<span class="font-['Manrope'] text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center px-3 py-2.5 space-x-3 rounded transition-colors duration-200 text-slate-400 hover:bg-slate-900/50 hover:text-slate-200" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="groups">groups</span>
+<span class="font-['Manrope'] text-sm font-medium">Alliance Roster</span>
+</a>
+<a class="flex items-center px-3 py-2.5 space-x-3 rounded transition-colors duration-200 text-slate-400 hover:bg-slate-900/50 hover:text-slate-200" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="calculate">calculate</span>
+<span class="font-['Manrope'] text-sm font-medium">War Calculator</span>
+</a>
+<a class="flex items-center px-3 py-2.5 space-x-3 rounded transition-colors duration-200 bg-slate-900 text-amber-500 border-r-2 border-amber-500" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="app_registration">app_registration</span>
+<span class="font-['Manrope'] text-sm font-medium">Member Submission</span>
+</a>
+</nav>
+<div class="pt-4 border-t border-slate-800 space-y-1">
+<a class="flex items-center px-3 py-2 space-x-3 rounded text-slate-400 hover:bg-slate-900/50 hover:text-slate-200 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+<span class="font-['Manrope'] text-sm font-medium">System Settings</span>
+</a>
+<a class="flex items-center px-3 py-2 space-x-3 rounded text-slate-400 hover:bg-slate-900/50 hover:text-slate-200 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="contact_support">contact_support</span>
+<span class="font-['Manrope'] text-sm font-medium">Support</span>
+</a>
+</div>
+<button class="w-full mt-4 bg-slate-800 hover:bg-slate-700 text-slate-200 py-3 rounded text-xs font-bold tracking-widest transition-all active:scale-[0.98]">
+            GENERATE REPORT
+        </button>
+</aside>
+<!-- TopAppBar (Authority Source: JSON) -->
+<header class="fixed top-0 right-0 left-64 h-16 flex items-center justify-between px-6 z-40 bg-[#0F1115] bg-opacity-95 backdrop-blur-md border-b border-slate-800 font-['Manrope'] tracking-tight">
+<div class="flex items-center">
+<span class="text-lg font-black tracking-widest text-amber-500 uppercase">STRAT-COM HQ</span>
+</div>
+<div class="flex items-center space-x-6">
+<div class="relative hidden lg:block">
+<input class="bg-slate-900 border border-slate-700 text-slate-300 text-xs rounded-lg pl-9 pr-4 py-2 focus:ring-1 focus:ring-amber-500 focus:border-amber-500 outline-none w-64 transition-all" placeholder="Search Intel..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-2 text-slate-500 text-sm" data-icon="search">search</span>
+</div>
+<div class="flex items-center space-x-4 text-slate-400">
+<span class="material-symbols-outlined cursor-pointer hover:text-amber-400 transition-all duration-150" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-amber-400 transition-all duration-150" data-icon="history">history</span>
+<div class="flex items-center space-x-3 pl-4 border-l border-slate-800">
+<img alt="User Avatar" class="w-8 h-8 rounded-full border border-slate-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRRRvR6AWsZlSUJcZRwTgv1RP1vb6f8JWzE1TrlU9SSn2lCVLf5EaXSXNpijnKSE2XPU8aZXq2uGMAmFcoscYqaSbpn14WR0cu5ngAqkzFgOimNKLlUqfD3l12wV1eWp_LYm7lUId-FXyW7pSE8hifTps8ABUOaAT0vA_ys4X5MsuE7HwyL1f6f3m7fcenH8Yc5aSu20TQtQYD-ZQYX2rG0bd_Y18UtXAkrhCvPyDyGe-EDxA_3-wnV1QMYoWB8IWNo8HWcBHXgx7Y"/>
+<span class="material-symbols-outlined cursor-pointer hover:text-amber-400 transition-all duration-150" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="ml-64 pt-16 h-screen overflow-y-auto bg-background p-gutter">
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Side: Form Container -->
+<div class="lg:col-span-8 space-y-stack-gap-md">
+<div class="bg-surface-elevated border border-surface-stroke rounded-xl overflow-hidden shadow-2xl">
+<!-- Form Header -->
+<div class="p-card-padding border-b border-surface-stroke bg-surface-container-lowest/50">
+<h1 class="font-h2-section text-h2-section text-text-primary mb-1">Member Roster Submission</h1>
+<p class="font-body-md text-body-md text-text-secondary">Update your combat capabilities to help leadership optimize alliance rallies.</p>
+</div>
+<!-- Form Body -->
+<form class="p-card-padding space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Name Field -->
+<div class="space-y-2">
+<label class="block font-metadata text-metadata text-text-secondary uppercase tracking-wider">Commander Name</label>
+<input class="w-full bg-surface-base border border-surface-stroke rounded-lg px-4 py-3 text-body-md text-text-primary focus:border-accent-gold focus:ring-1 focus:ring-accent-gold outline-none transition-all placeholder:opacity-30" placeholder="e.g. Ironclad" type="text"/>
+</div>
+<!-- Town Center Field -->
+<div class="space-y-2">
+<label class="block font-metadata text-metadata text-text-secondary uppercase tracking-wider">Town Center Level</label>
+<select class="w-full bg-surface-base border border-surface-stroke rounded-lg px-4 py-3 text-body-md text-text-primary focus:border-accent-gold focus:ring-0 outline-none appearance-none">
+<optgroup class="bg-surface-elevated" label="Standard Levels">
+<option>TC 25</option>
+<option>TC 26</option>
+<option>TC 27</option>
+<option>TC 28</option>
+<option>TC 29</option>
+<option>TC 30</option>
+</optgroup>
+<optgroup class="bg-surface-elevated" label="Truegold Tiers">
+<option>TG1</option>
+<option>TG2</option>
+<option>TG3</option>
+<option>TG4</option>
+<option>TG5</option>
+</optgroup>
+</select>
+</div>
+<!-- Rally Cap Field -->
+<div class="space-y-2">
+<label class="block font-metadata text-metadata text-text-secondary uppercase tracking-wider flex justify-between">
+                                    Rally Cap
+                                    <span class="flex items-center text-status-warning text-[10px] animate-pulse">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="report">report</span>
+                                        Verify Data
+                                    </span>
+</label>
+<div class="relative">
+<input class="w-full bg-surface-base border border-surface-stroke rounded-lg px-4 py-3 text-body-md font-mono text-text-primary focus:border-accent-gold focus:ring-1 focus:ring-accent-gold outline-none" placeholder="e.g., 2.5M" type="text"/>
+</div>
+<p class="font-metadata text-[11px] text-text-muted italic">Accepts K/M shorthand (e.g., 225K)</p>
+</div>
+<!-- Deployment Cap Field -->
+<div class="space-y-2">
+<label class="block font-metadata text-metadata text-text-secondary uppercase tracking-wider">Deployment Cap</label>
+<input class="w-full bg-surface-base border border-surface-stroke rounded-lg px-4 py-3 text-body-md font-mono text-text-primary focus:border-accent-gold focus:ring-1 focus:ring-accent-gold outline-none" type="number"/>
+</div>
+<!-- Highest Tier Field -->
+<div class="space-y-2">
+<label class="block font-metadata text-metadata text-text-secondary uppercase tracking-wider">Highest Unit Tier</label>
+<select class="w-full bg-surface-base border border-surface-stroke rounded-lg px-4 py-3 text-body-md text-text-primary focus:border-accent-gold focus:ring-0 outline-none">
+<option>T12</option>
+<option>T11</option>
+<option selected="">T10</option>
+<option>T9</option>
+<option>T8</option>
+</select>
+</div>
+<!-- Total Troops Field -->
+<div class="space-y-2">
+<label class="block font-metadata text-metadata text-text-secondary uppercase tracking-wider">Total Troops</label>
+<input class="w-full bg-surface-base border border-surface-stroke rounded-lg px-4 py-3 text-body-md font-mono text-text-primary focus:border-accent-gold focus:ring-1 focus:ring-accent-gold outline-none" type="number"/>
+</div>
+</div>
+<!-- Submit Action -->
+<div class="pt-6 border-t border-surface-stroke flex justify-end">
+<button class="bg-accent-gold hover:bg-amber-600 text-[#0F1115] font-button-text text-button-text px-8 py-4 rounded shadow-lg shadow-accent-gold/10 transition-all hover:-translate-y-0.5 active:translate-y-0 uppercase tracking-widest" type="submit">
+                                Submit to Roster
+                            </button>
+</div>
+</form>
+</div>
+</div>
+<!-- Right Side: Info Sidebar -->
+<div class="lg:col-span-4 space-y-stack-gap-md">
+<!-- Information Box -->
+<div class="bg-surface-elevated border border-surface-stroke rounded-xl p-card-padding">
+<div class="flex items-center space-x-3 mb-4">
+<span class="material-symbols-outlined text-accent-ice" data-icon="info">info</span>
+<h3 class="font-h3-card text-h3-card text-accent-ice uppercase tracking-wide">Information</h3>
+</div>
+<div class="space-y-4">
+<div>
+<h4 class="font-metadata text-metadata text-text-primary uppercase mb-1">The 'Rule of 4'</h4>
+<p class="font-body-md text-xs text-text-secondary leading-relaxed">
+                                Joiner skills only stack up to 4 instances. Ensure your top 4 commanders are spec'd for rally reinforcement to maximize the bonus. High TC levels without proper skills reduce rally efficiency.
+                            </p>
+</div>
+<div class="p-3 bg-accent-gold/5 border-l-2 border-accent-gold rounded">
+<h4 class="font-metadata text-metadata text-accent-gold uppercase mb-1">Bear Trap Optimizer</h4>
+<p class="font-body-md text-xs text-text-secondary leading-relaxed">
+                                Accurate troop count and deployment cap data feeds directly into the Bear Trap Optimizer. Inaccurate submissions lead to suboptimal rally structures and lower alliance points.
+                            </p>
+</div>
+</div>
+</div>
+<!-- Decorative Imagery / Stat Card -->
+<div class="relative overflow-hidden rounded-xl border border-surface-stroke bg-surface-elevated group">
+<img class="w-full h-48 object-cover opacity-40 group-hover:scale-105 transition-transform duration-700" data-alt="dramatic cinematic 3D render of a strategic military holographic map table in a dark command room with amber glowing accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwjhizoutfu5_PEVwr6elcgDKx2iPRK2J3AnaNu8zKrEYQ7-_3OIgSXy4Qp4dUfxZY9PMoE_NqW8hc105hGtzJxDQUi0rk1jv-ZDYGYPjHqL9KLmzHyhOr_xn8hZSW-JZMm_X7w2zgOAzK0NNfAWpzq3vQyeIMnvzxNDef5zwf3ZR-18r0dE2GttHDhoq0id0qqbP0sSUxVso8Z8jEq4kfOufUC2vl_NUrKMWubk90lhZkX49Uqq-rotq0Gz6o1MLttGOM5K0s0M4F"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-elevated via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<div class="flex justify-between items-end">
+<div>
+<p class="font-metadata text-[10px] text-accent-gold uppercase tracking-[0.2em]">Alliance Health</p>
+<p class="font-h2-section text-xl text-text-primary">98.2% Accurate</p>
+</div>
+<span class="material-symbols-outlined text-accent-amber text-3xl" data-icon="verified_user" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+</div>
+</div>
+<!-- Tactical Alert -->
+<div class="bg-error-container/10 border border-error-container/30 rounded-xl p-4 flex items-start space-x-3">
+<span class="material-symbols-outlined text-error mt-0.5" data-icon="warning">warning</span>
+<div>
+<p class="font-metadata text-xs font-bold text-error uppercase">Action Required</p>
+<p class="text-[11px] text-on-error-container leading-tight mt-1">Submit updates before next Reset (00:00 UTC) to participate in the S3 Siege.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

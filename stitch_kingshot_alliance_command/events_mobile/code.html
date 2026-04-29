@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kingshot Event Intelligence Center</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface": "#e5e2e1",
+                      "secondary": "#c4c6d0",
+                      "accent-crimson": "#9E1B1B",
+                      "surface-base": "#0F1115",
+                      "surface-tint": "#c6c6cc",
+                      "on-tertiary-container": "#987900",
+                      "secondary-fixed-dim": "#c4c6d0",
+                      "primary-fixed": "#e2e2e8",
+                      "on-primary": "#2f3035",
+                      "on-error": "#690005",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "text-secondary": "#94A3B8",
+                      "on-background": "#e5e2e1",
+                      "primary-fixed-dim": "#c6c6cc",
+                      "on-primary-container": "#7b7c82",
+                      "on-primary-fixed": "#1a1c20",
+                      "inverse-on-surface": "#313030",
+                      "text-primary": "#F1F5F9",
+                      "surface-elevated": "#1C1F26",
+                      "error": "#ffb4ab",
+                      "secondary-container": "#464951",
+                      "primary": "#c6c6cc",
+                      "outline-variant": "#45474b",
+                      "on-error-container": "#ffdad6",
+                      "inverse-primary": "#5d5e63",
+                      "surface-variant": "#353435",
+                      "status-warning": "#B45309",
+                      "outline": "#909095",
+                      "on-secondary-container": "#b6b8c1",
+                      "on-surface-variant": "#c6c6cb",
+                      "surface-container-high": "#2a2a2a",
+                      "inverse-surface": "#e5e2e1",
+                      "on-tertiary": "#3c2f00",
+                      "background": "#141314",
+                      "primary-container": "#0f1115",
+                      "on-primary-fixed-variant": "#45474b",
+                      "surface-container": "#201f20",
+                      "accent-amber": "#FFBF00",
+                      "accent-gold": "#D4AF37",
+                      "status-success": "#2D5A27",
+                      "on-secondary": "#2d3038",
+                      "surface-stroke": "#2D333D",
+                      "surface": "#141314",
+                      "surface-container-highest": "#353435",
+                      "tertiary-fixed": "#ffe088",
+                      "accent-ice": "#7895B2",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "on-tertiary-fixed": "#241a00",
+                      "secondary-fixed": "#e0e2ec",
+                      "error-container": "#93000a",
+                      "surface-container-low": "#1c1b1c",
+                      "surface-bright": "#3a3939",
+                      "tertiary": "#e9c349",
+                      "surface-dim": "#141314",
+                      "on-secondary-fixed": "#191c22",
+                      "tertiary-container": "#171000",
+                      "on-secondary-fixed-variant": "#44474e",
+                      "surface-container-lowest": "#0e0e0e",
+                      "text-muted": "#64748B"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "stack-gap-sm": "8px",
+                      "section-gap": "48px",
+                      "gutter": "24px",
+                      "container-max-width": "1440px",
+                      "stack-gap-md": "16px",
+                      "card-padding": "20px"
+              },
+              "fontFamily": {
+                      "button-text": ["Manrope"],
+                      "h2-section": ["Manrope"],
+                      "h1-display": ["Manrope"],
+                      "body-lg": ["Inter"],
+                      "metadata": ["Inter"],
+                      "h3-card": ["Manrope"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "button-text": ["14px", {"lineHeight": "1", "fontWeight": "600"}],
+                      "h2-section": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "h1-display": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                      "metadata": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                      "h3-card": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+        /* Tactical grid background for main canvas */
+        .bg-tactical-grid {
+            background-image: linear-gradient(to right, rgba(45, 51, 61, 0.2) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(45, 51, 61, 0.2) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary font-body-md min-h-screen flex flex-col pt-16 pb-20 bg-tactical-grid selection:bg-accent-gold selection:text-surface-base">
+<!-- TopAppBar Shared Component -->
+<nav class="bg-[#0F1115] dark:bg-[#0F1115] text-slate-100 dark:text-slate-100 font-manrope font-bold tracking-tighter border-b border-slate-800 flat no shadows fixed top-0 w-full z-50 flex justify-between items-center px-4 h-16 hover:bg-slate-800/50 transition-colors active:scale-95 duration-150">
+<div class="flex items-center gap-4">
+<button class="text-slate-400 hover:text-slate-100 transition-colors">
+<span class="material-symbols-outlined text-[24px]" data-icon="menu">menu</span>
+</button>
+<span class="text-lg font-black tracking-widest text-slate-100 dark:text-slate-100 uppercase">KINGSHOT</span>
+</div>
+<div class="flex items-center">
+<img alt="Commander Profile Avatar" class="w-8 h-8 rounded-full border border-surface-stroke object-cover" data-alt="close-up portrait of a serious male military commander in a dark sci-fi uniform with dramatic rim lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-tloCnMfxWlks_rCFFVxZKxUQ5dPRNQT9Afb_DwxodcQLOo6xCGz2e8fYZtZtpQW6N24-l57-Ff1IOYAX50cgnuPmt8CgDK4KIS24uZKTKg-16_gcBbkkENyigTTCX9E--lLIjuIm8ROHda4_DK3dhgm4Pl2ZpKAaW8MuDubS9F9zO70HLlq0c1WZjSBhBQTC1cHjjKoELyymcnG783NuOTanZR4Jk4r7FOkwgwdsKmDszJWfDP_LCaYWF6oRbjWmyQ4rrHDfFV3G"/>
+</div>
+</nav>
+<!-- Main Canvas -->
+<main class="flex-1 w-full max-w-md mx-auto px-4 py-6 flex flex-col gap-6">
+<!-- Header & Filters -->
+<div class="flex flex-col gap-4">
+<div>
+<h1 class="font-h1-display text-h1-display text-text-primary">Intel Center</h1>
+<p class="font-body-md text-body-md text-text-muted mt-1">Global Event Coordination</p>
+</div>
+<!-- Filter Tabs -->
+<div class="flex gap-2 overflow-x-auto pb-2 scrollbar-hide snap-x">
+<button class="snap-start shrink-0 px-5 py-2.5 bg-surface-elevated border border-accent-amber rounded-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-accent-amber" data-icon="radar" data-weight="fill">radar</span>
+<span class="font-button-text text-button-text text-accent-amber uppercase tracking-wider">Active</span>
+</button>
+<button class="snap-start shrink-0 px-5 py-2.5 bg-surface-base border border-surface-stroke rounded-lg flex items-center gap-2 text-text-muted hover:text-text-primary hover:border-outline-variant transition-colors">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+<span class="font-button-text text-button-text uppercase tracking-wider">Upcoming</span>
+</button>
+<button class="snap-start shrink-0 px-5 py-2.5 bg-surface-base border border-surface-stroke rounded-lg flex items-center gap-2 text-text-muted hover:text-text-primary hover:border-outline-variant transition-colors">
+<span class="material-symbols-outlined text-[16px]" data-icon="history">history</span>
+<span class="font-button-text text-button-text uppercase tracking-wider">Completed</span>
+</button>
+</div>
+</div>
+<!-- Event Cards Stack -->
+<div class="flex flex-col gap-stack-gap-md">
+<!-- Event Card 1 (Critical Priority) -->
+<div class="bg-surface-elevated border border-accent-crimson/50 rounded-xl overflow-hidden relative flex flex-col shadow-[0_8px_32px_-8px_rgba(158,27,27,0.15)]">
+<!-- Tactical Background overlay -->
+<div class="absolute inset-0 bg-gradient-to-br from-accent-crimson/10 to-transparent pointer-events-none"></div>
+<div class="p-card-padding flex flex-col gap-4 relative z-10">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-[#9E1B1B]/20 border border-accent-crimson flex items-center justify-center">
+<span class="material-symbols-outlined text-accent-crimson" data-icon="swords">swords</span>
+</div>
+<div>
+<h3 class="font-h3-card text-h3-card text-text-primary">Kingdom vs Kingdom</h3>
+<p class="font-metadata text-metadata text-accent-crimson uppercase tracking-widest mt-0.5">Phase 3: Capital Siege</p>
+</div>
+</div>
+<div class="px-2 py-1 bg-accent-crimson/20 border border-accent-crimson/50 rounded flex items-center gap-1">
+<div class="w-1.5 h-1.5 rounded-full bg-accent-crimson animate-pulse"></div>
+<span class="font-metadata text-metadata text-accent-crimson uppercase font-bold">Live</span>
+</div>
+</div>
+<!-- Countdown Display -->
+<div class="bg-surface-base border border-surface-stroke rounded-lg p-3 flex flex-col items-center justify-center gap-1">
+<span class="font-metadata text-metadata text-text-muted uppercase tracking-widest">Time Remaining</span>
+<div class="font-mono text-2xl font-bold tracking-tight text-accent-amber flex items-center gap-1">
+<span>04</span><span class="text-outline">:</span><span>12</span><span class="text-outline">:</span><span>59</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-surface-base/50 border border-surface-stroke/50 rounded-lg p-2.5">
+<p class="font-metadata text-metadata text-text-muted mb-1">Your Contribution</p>
+<p class="font-body-md text-body-md font-mono text-text-primary">124,500 <span class="text-accent-ice text-[10px] ml-1">PTS</span></p>
+</div>
+<div class="bg-surface-base/50 border border-surface-stroke/50 rounded-lg p-2.5">
+<p class="font-metadata text-metadata text-text-muted mb-1">Alliance Rank</p>
+<p class="font-body-md text-body-md font-mono text-accent-gold">#3 <span class="text-text-secondary text-[10px] ml-1">/ 50</span></p>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-stroke hover:bg-outline-variant border border-outline transition-colors rounded-lg font-button-text text-button-text text-text-primary uppercase tracking-wider flex items-center justify-center gap-2 mt-2">
+<span>Deploy Troops</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Event Card 2 (Standard Active) -->
+<div class="bg-surface-elevated border border-surface-stroke rounded-xl overflow-hidden relative flex flex-col">
+<div class="p-card-padding flex flex-col gap-4 relative z-10">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-base border border-surface-stroke flex items-center justify-center">
+<span class="material-symbols-outlined text-accent-ice" data-icon="hub">hub</span>
+</div>
+<div>
+<h3 class="font-h3-card text-h3-card text-text-primary">Resource Node Control</h3>
+<p class="font-metadata text-metadata text-text-muted uppercase tracking-widest mt-0.5">Alliance Operation</p>
+</div>
+</div>
+</div>
+<!-- Countdown Display -->
+<div class="bg-surface-base border border-surface-stroke rounded-lg p-3 flex flex-col items-center justify-center gap-1">
+<span class="font-metadata text-metadata text-text-muted uppercase tracking-widest">Ends In</span>
+<div class="font-mono text-xl font-bold tracking-tight text-text-primary flex items-center gap-1">
+<span>14</span><span class="text-outline">:</span><span>45</span><span class="text-outline">:</span><span>22</span>
+</div>
+</div>
+<div class="flex items-center justify-between bg-surface-base/50 border border-surface-stroke/50 rounded-lg p-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-gold text-[18px]" data-icon="military_tech">military_tech</span>
+<span class="font-metadata text-metadata text-text-secondary">Next Milestone</span>
+</div>
+<div class="font-mono text-body-md font-bold text-accent-ice">
+                            85%
+                        </div>
+</div>
+<div class="w-full bg-surface-base h-1.5 rounded-full overflow-hidden">
+<div class="bg-accent-ice h-full w-[85%] rounded-full shadow-[0_0_10px_rgba(120,149,178,0.5)]"></div>
+</div>
+<button class="w-full py-3 bg-surface-base hover:bg-surface-stroke border border-surface-stroke transition-colors rounded-lg font-button-text text-button-text text-text-secondary hover:text-text-primary uppercase tracking-wider flex items-center justify-center gap-2 mt-2">
+<span>View Details</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar Shared Component -->
+<nav class="bg-[#0F1115]/95 backdrop-blur-md text-amber-500 dark:text-amber-400 font-manrope text-[10px] font-bold uppercase tracking-wider shadow-[0_-4px_12px_rgba(0,0,0,0.5)] fixed bottom-0 w-full z-50 flex justify-around items-center px-2 py-3 h-20 md:hidden">
+<!-- Dashboard (Inactive) -->
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-slate-200 transition-all duration-200 ease-in-out w-16 gap-1" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<!-- Roster (Inactive) -->
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-slate-200 transition-all duration-200 ease-in-out w-16 gap-1" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="group">group</span>
+<span>Roster</span>
+</a>
+<!-- Events (Active Match) -->
+<a class="flex flex-col items-center justify-center text-amber-400 font-bold bg-slate-800/40 rounded-lg px-3 py-1 hover:text-slate-200 transition-all duration-200 ease-in-out w-16 gap-1" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="event" data-weight="fill">event</span>
+<span>Events</span>
+</a>
+<!-- Calculators (Inactive) -->
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-slate-200 transition-all duration-200 ease-in-out w-16 gap-1" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="calculate">calculate</span>
+<span>Calculators</span>
+</a>
+</nav>
+</body></html>

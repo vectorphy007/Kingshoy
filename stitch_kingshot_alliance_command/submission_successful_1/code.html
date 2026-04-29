@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#e5e2e1",
+                        "on-primary-fixed-variant": "#45474b",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "primary-container": "#0f1115",
+                        "accent-crimson": "#9E1B1B",
+                        "surface-container-lowest": "#0e0e0e",
+                        "primary-fixed-dim": "#c6c6cc",
+                        "surface-container": "#201f20",
+                        "surface-tint": "#c6c6cc",
+                        "outline-variant": "#45474b",
+                        "surface-dim": "#141314",
+                        "secondary-fixed": "#e0e2ec",
+                        "on-primary-fixed": "#1a1c20",
+                        "on-tertiary-container": "#987900",
+                        "secondary": "#c4c6d0",
+                        "on-secondary": "#2d3038",
+                        "error-container": "#93000a",
+                        "tertiary-container": "#171000",
+                        "secondary-fixed-dim": "#c4c6d0",
+                        "on-surface": "#e5e2e1",
+                        "accent-amber": "#FFBF00",
+                        "text-secondary": "#94A3B8",
+                        "on-secondary-fixed": "#191c22",
+                        "on-background": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#44474e",
+                        "on-primary-container": "#7b7c82",
+                        "secondary-container": "#464951",
+                        "on-primary": "#2f3035",
+                        "inverse-on-surface": "#313030",
+                        "status-success": "#2D5A27",
+                        "status-warning": "#B45309",
+                        "accent-ice": "#7895B2",
+                        "tertiary": "#e9c349",
+                        "on-tertiary": "#3c2f00",
+                        "primary-fixed": "#e2e2e8",
+                        "surface-container-highest": "#353435",
+                        "error": "#ffb4ab",
+                        "on-secondary-container": "#b6b8c1",
+                        "text-primary": "#F1F5F9",
+                        "text-muted": "#64748B",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "tertiary-fixed": "#ffe088",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container-low": "#1c1b1c",
+                        "surface-elevated": "#1C1F26",
+                        "surface": "#141314",
+                        "accent-gold": "#D4AF37",
+                        "surface-bright": "#3a3939",
+                        "on-surface-variant": "#c6c6cb",
+                        "background": "#141314",
+                        "on-error": "#690005",
+                        "inverse-primary": "#5d5e63",
+                        "primary": "#c6c6cc",
+                        "surface-variant": "#353435",
+                        "on-tertiary-fixed": "#241a00",
+                        "outline": "#909095",
+                        "surface-stroke": "#2D333D",
+                        "surface-base": "#0F1115"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-gap-sm": "8px",
+                        "stack-gap-md": "16px",
+                        "container-max-width": "1440px",
+                        "section-gap": "48px",
+                        "card-padding": "20px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "metadata": ["Inter"],
+                        "h3-card": ["Manrope"],
+                        "button-text": ["Manrope"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "h2-section": ["Manrope"],
+                        "h1-display": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "metadata": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "h3-card": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "button-text": ["14px", {"lineHeight": "1", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                        "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "h2-section": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "h1-display": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.grain-overlay {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBuww7b2kHjnuGfDxrc5NaC1Lw8mQvGBozgvFcyVZfjZeL7jPYtaLRSg__pDnPVdygzpJZ2GqAbx3ZX88c-CqUQiBjiSiVN-_xIb6DUVlTUVxurmO2TCp96McJQR2HO-Tp00gsYfZNWrOMHhspy9UvEICeBHxfk_kPIAnhv4WLD-7vgvNYrx9BC-PX5ZFOKcDhpsp5sec68rRjnVBDdunpQ7ayXsg501yMjX_GGJ8-1V6LyEsdNJEtl_LlfxMAJr-paiFYA0Nkaiqcb);
+    opacity: 0.03
+    }</style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- Grain Overlay for Tactical Feel -->
+<div class="fixed inset-0 grain-overlay pointer-events-none"></div>
+<!-- Navigation Shell Suppressed for Success Screen (Transactional Flow) -->
+<header class="bg-[#0F1115] border-b border-slate-800 flex justify-between items-center w-full px-6 h-16 z-50 sticky top-0">
+<div class="text-xl font-black tracking-tighter text-amber-500 font-manrope uppercase">KINGSHOT ALLIANCE</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-500" data-icon="military_tech">military_tech</span>
+<div class="h-8 w-8 rounded bg-surface-container border border-surface-stroke flex items-center justify-center">
+<span class="material-symbols-outlined text-amber-500 text-sm" data-icon="person">person</span>
+</div>
+</div>
+</header>
+<main class="min-h-[calc(100vh-64px)] flex flex-col items-center justify-center px-gutter py-section-gap relative">
+<!-- Success Identity Section -->
+<div class="text-center mb-10">
+<div class="inline-flex items-center justify-center w-24 h-24 mb-6 rounded-full bg-status-success/10 border-2 border-status-success text-status-success shadow-[0_0_30px_rgba(45,90,39,0.3)]">
+<span class="material-symbols-outlined text-5xl" data-icon="military_tech" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+</div>
+<h1 class="font-h1-display text-h1-display text-text-primary uppercase tracking-tight mb-2">Submission Successful</h1>
+<p class="font-body-lg text-body-lg text-text-secondary max-w-lg mx-auto">
+                Your stats have been updated and are now being used by leadership to optimize alliance rallies.
+            </p>
+</div>
+<!-- Submission Summary Bento Grid -->
+<div class="w-full max-container-max-width grid grid-cols-1 md:grid-cols-3 gap-stack-md">
+<!-- Main Summary Card -->
+<div class="md:col-span-2 bg-surface-elevated border border-surface-stroke p-card-padding rounded-lg relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-accent-gold"></div>
+<div class="flex items-center justify-between mb-8">
+<h3 class="font-h3-card text-h3-card text-accent-gold uppercase tracking-widest">Submitted Intel Summary</h3>
+<span class="text-metadata font-metadata text-status-success bg-status-success/20 px-3 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="verified">verified</span> VERIFIED
+                    </span>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-4">
+<div class="flex flex-col">
+<span class="text-metadata font-metadata text-text-muted uppercase mb-1">Commander Name</span>
+<span class="text-body-lg font-body-lg text-text-primary">Ghost_Protocol_9</span>
+</div>
+<div class="flex flex-col">
+<span class="text-metadata font-metadata text-text-muted uppercase mb-1">TC Level</span>
+<span class="text-body-lg font-body-lg text-accent-ice font-bold">LVL 25</span>
+</div>
+<div class="flex flex-col">
+<span class="text-metadata font-metadata text-text-muted uppercase mb-1">Highest Tier</span>
+<span class="text-body-lg font-body-lg text-accent-gold font-bold">T11 Vanguard</span>
+</div>
+<div class="flex flex-col">
+<span class="text-metadata font-metadata text-text-muted uppercase mb-1">Rally Capacity</span>
+<span class="text-body-lg font-body-lg text-text-primary font-mono">2,450,000</span>
+</div>
+<div class="flex flex-col">
+<span class="text-metadata font-metadata text-text-muted uppercase mb-1">Deployment Cap</span>
+<span class="text-body-lg font-body-lg text-text-primary font-mono">315,000</span>
+</div>
+<div class="flex flex-col">
+<span class="text-metadata font-metadata text-text-muted uppercase mb-1">Total Troops</span>
+<span class="text-body-lg font-body-lg text-text-primary font-mono">18,420,950</span>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-surface-stroke flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container rounded border border-surface-stroke flex items-center justify-center">
+<span class="material-symbols-outlined text-accent-ice" data-icon="history_edu">history_edu</span>
+</div>
+<div>
+<p class="text-metadata font-metadata text-text-muted">Last Submission Date</p>
+<p class="text-body-md font-body-md text-text-primary">Oct 24, 2023 - 14:32 UTC</p>
+</div>
+</div>
+<div class="text-right">
+<span class="text-metadata font-metadata text-accent-amber bg-accent-amber/10 px-2 py-0.5 border border-accent-amber/20">R5 REVIEW PENDING</span>
+</div>
+</div>
+</div>
+<!-- Next Steps / Quick Links -->
+<div class="flex flex-col gap-stack-md">
+<div class="bg-surface-elevated border border-surface-stroke p-card-padding rounded-lg flex-1">
+<h3 class="font-h3-card text-h3-card text-text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-gold" data-icon="near_me">near_me</span>
+                        Next Steps
+                    </h3>
+<nav class="flex flex-col gap-3">
+<a class="group flex items-center justify-between p-4 bg-surface-container hover:bg-surface-container-high border border-surface-stroke transition-all rounded" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-accent-gold group-hover:scale-110 transition-transform" data-icon="groups">groups</span>
+<span class="text-button-text font-button-text uppercase tracking-wide">View Roster Hub</span>
+</div>
+<span class="material-symbols-outlined text-slate-600 group-hover:text-accent-gold transition-colors" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="group flex items-center justify-between p-4 bg-surface-container hover:bg-surface-container-high border border-surface-stroke transition-all rounded" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-accent-gold group-hover:scale-110 transition-transform" data-icon="dashboard">dashboard</span>
+<span class="text-button-text font-button-text uppercase tracking-wide">Return to Dashboard</span>
+</div>
+<span class="material-symbols-outlined text-slate-600 group-hover:text-accent-gold transition-colors" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="group flex items-center justify-between p-4 bg-surface-container hover:bg-surface-container-high border border-surface-stroke transition-all rounded" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-accent-gold group-hover:scale-110 transition-transform" data-icon="person_add">person_add</span>
+<span class="text-button-text font-button-text uppercase tracking-wide">Update Another Account</span>
+</div>
+<span class="material-symbols-outlined text-slate-600 group-hover:text-accent-gold transition-colors" data-icon="chevron_right">chevron_right</span>
+</a>
+</nav>
+</div>
+<!-- Alliance Sigil Decorative Card -->
+<div class="h-32 bg-surface-base border border-surface-stroke rounded-lg relative overflow-hidden flex items-center px-6 group">
+<div class="absolute inset-0 opacity-20 grayscale group-hover:grayscale-0 transition-all duration-700">
+<img alt="Alliance Sigil background" class="w-full h-full object-cover" data-alt="high-tech futuristic circuit board pattern with glowing amber lines and metallic textures for a tactical command interface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXwv6hjTU0SooR-euQPxuWmh6QYGZg5uU4ktV6esr4skKnu_HM2O0_O9qaa-7B5v0O00wEUwg667HoQCaFNHITCqC678wK_0qPIAZe7f2yU57oJlYVjkka8ATluHEnZ9eo5TmoWoncD54zKlrBCDztKlAhhkR5OkZocPSPgewvpDRIefrpiCZk3r6pNCDWhmvNqP9nNJUMsbufNkndWQx0MVUK3qaohM9G-ZNA2QnYGqJUy1EvP2Yq-dNrwMIYpG-m5z6Im99zy10H"/>
+</div>
+<div class="relative z-10">
+<p class="text-metadata font-metadata text-accent-gold">KINGSHOT ELITE</p>
+<p class="text-h3-card font-h3-card text-text-primary uppercase">Strength in Unity</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Information / Message -->
+<div class="mt-section-gap w-full max-w-3xl bg-surface-container/30 border-l-2 border-accent-ice p-6 flex gap-4 items-start">
+<span class="material-symbols-outlined text-accent-ice mt-1" data-icon="info">info</span>
+<div>
+<p class="text-body-md font-body-md text-text-secondary leading-relaxed">
+                    Submission recorded as official Alliance Intel. Your data is encrypted and accessible only by R4 and R5 command staff for strategic planning. Data remains valid for 7 days before requiring a mandatory re-sync.
+                </p>
+<div class="mt-4 flex gap-4">
+<button class="text-button-text font-button-text text-accent-ice uppercase tracking-wider hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span> Download Receipt
+                    </button>
+<button class="text-button-text font-button-text text-accent-crimson uppercase tracking-wider hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="report">report</span> Report Discrepancy
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Identity -->
+<footer class="py-12 border-t border-slate-800 text-center opacity-50">
+<p class="text-metadata font-metadata uppercase tracking-[0.2em] text-slate-500">
+            Kingshot Tactical Command Center • Operational Protocol v4.2.0
+        </p>
+</footer>
+</body></html>

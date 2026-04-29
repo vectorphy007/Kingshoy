@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kingshot Strategic Calculator Directory</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface": "#e5e2e1",
+                      "secondary": "#c4c6d0",
+                      "accent-crimson": "#9E1B1B",
+                      "surface-base": "#0F1115",
+                      "surface-tint": "#c6c6cc",
+                      "on-tertiary-container": "#987900",
+                      "secondary-fixed-dim": "#c4c6d0",
+                      "primary-fixed": "#e2e2e8",
+                      "on-primary": "#2f3035",
+                      "on-error": "#690005",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "text-secondary": "#94A3B8",
+                      "on-background": "#e5e2e1",
+                      "primary-fixed-dim": "#c6c6cc",
+                      "on-primary-container": "#7b7c82",
+                      "on-primary-fixed": "#1a1c20",
+                      "inverse-on-surface": "#313030",
+                      "text-primary": "#F1F5F9",
+                      "surface-elevated": "#1C1F26",
+                      "error": "#ffb4ab",
+                      "secondary-container": "#464951",
+                      "primary": "#c6c6cc",
+                      "outline-variant": "#45474b",
+                      "on-error-container": "#ffdad6",
+                      "inverse-primary": "#5d5e63",
+                      "surface-variant": "#353435",
+                      "status-warning": "#B45309",
+                      "outline": "#909095",
+                      "on-secondary-container": "#b6b8c1",
+                      "on-surface-variant": "#c6c6cb",
+                      "surface-container-high": "#2a2a2a",
+                      "inverse-surface": "#e5e2e1",
+                      "on-tertiary": "#3c2f00",
+                      "background": "#141314",
+                      "primary-container": "#0f1115",
+                      "on-primary-fixed-variant": "#45474b",
+                      "surface-container": "#201f20",
+                      "accent-amber": "#FFBF00",
+                      "accent-gold": "#D4AF37",
+                      "status-success": "#2D5A27",
+                      "on-secondary": "#2d3038",
+                      "surface-stroke": "#2D333D",
+                      "surface": "#141314",
+                      "surface-container-highest": "#353435",
+                      "tertiary-fixed": "#ffe088",
+                      "accent-ice": "#7895B2",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "on-tertiary-fixed": "#241a00",
+                      "secondary-fixed": "#e0e2ec",
+                      "error-container": "#93000a",
+                      "surface-container-low": "#1c1b1c",
+                      "surface-bright": "#3a3939",
+                      "tertiary": "#e9c349",
+                      "surface-dim": "#141314",
+                      "on-secondary-fixed": "#191c22",
+                      "tertiary-container": "#171000",
+                      "on-secondary-fixed-variant": "#44474e",
+                      "surface-container-lowest": "#0e0e0e",
+                      "text-muted": "#64748B"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "stack-gap-sm": "8px",
+                      "section-gap": "48px",
+                      "gutter": "24px",
+                      "container-max-width": "1440px",
+                      "stack-gap-md": "16px",
+                      "card-padding": "20px"
+              },
+              "fontFamily": {
+                      "button-text": [
+                              "Manrope"
+                      ],
+                      "h2-section": [
+                              "Manrope"
+                      ],
+                      "h1-display": [
+                              "Manrope"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "metadata": [
+                              "Inter"
+                      ],
+                      "h3-card": [
+                              "Manrope"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "button-text": [
+                              "14px",
+                              {
+                                      "lineHeight": "1",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "h2-section": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "h1-display": [
+                              "36px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "metadata": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "h3-card": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary min-h-screen flex flex-col antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-4 h-16 bg-[#0F1115] dark:bg-[#0F1115] border-b border-slate-800">
+<button class="text-slate-100 dark:text-slate-100 hover:bg-slate-800/50 transition-colors active:scale-95 duration-150 p-2 rounded-lg">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<div class="font-manrope font-bold tracking-tighter text-lg font-black tracking-widest text-slate-100 dark:text-slate-100 uppercase">
+            KINGSHOT
+        </div>
+<button class="hover:bg-slate-800/50 transition-colors active:scale-95 duration-150 p-1 rounded-full border border-surface-stroke">
+<img alt="Commander Profile Avatar" class="w-8 h-8 rounded-full object-cover" data-alt="A close up portrait of a male commander with a serious expression, dark background, tactical lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM7fWU_Lvc-m1CLAJljX9QRTWRKQ6D3Awx7ttRyatwkkCAWiN7SUg_HETlp0GRiWbDQip1RSyLoFdNM-3PjGKTfj6ftagsY9HD8X7JRWjmF4Q4HhIkv4Vesnzj_OyBkZLI-M6xjAMIWwuPLvziwsl1WUeC74YPhakuOawtyRpp7Dyg4be_JBDvqsHfERxMr3Q-y57WL0SYiPI0sa66GmFaok_IA7wKDO-57bXi_IBq0sx-GwFvq2-MqvmPLqYAQgMtZwzz1a89_SPs"/>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[calc(64px+24px)] pb-[calc(80px+24px)] px-gutter max-w-container-max-width mx-auto w-full md:hidden">
+<div class="mb-section-gap">
+<h1 class="font-h1-display text-h1-display text-text-primary mb-stack-gap-sm">Calculators</h1>
+<p class="font-body-md text-body-md text-text-secondary">Strategic tools for alliance dominance.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-stack-gap-md">
+<!-- Calculator Card 1 -->
+<a class="block bg-surface-elevated border border-surface-stroke rounded-xl p-card-padding hover:border-accent-gold transition-colors duration-150 active:scale-95 flex items-center gap-stack-gap-md shadow-sm" href="#">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center border border-surface-stroke text-accent-ice shrink-0">
+<span class="material-symbols-outlined text-2xl" data-icon="pets">pets</span>
+</div>
+<div>
+<h3 class="font-h3-card text-h3-card text-text-primary">Bear Hunt</h3>
+<p class="font-metadata text-metadata text-text-secondary mt-1">Optimize troop formations for maximum damage.</p>
+</div>
+</a>
+<!-- Calculator Card 2 -->
+<a class="block bg-surface-elevated border border-surface-stroke rounded-xl p-card-padding hover:border-accent-gold transition-colors duration-150 active:scale-95 flex items-center gap-stack-gap-md shadow-sm" href="#">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center border border-surface-stroke text-accent-amber shrink-0">
+<span class="material-symbols-outlined text-2xl" data-icon="call_split">call_split</span>
+</div>
+<div>
+<h3 class="font-h3-card text-h3-card text-text-primary">Lane Distributor</h3>
+<p class="font-metadata text-metadata text-text-secondary mt-1">Calculate optimal pathing and force allocation.</p>
+</div>
+</a>
+<!-- Calculator Card 3 -->
+<a class="block bg-surface-elevated border border-surface-stroke rounded-xl p-card-padding hover:border-accent-gold transition-colors duration-150 active:scale-95 flex items-center gap-stack-gap-md shadow-sm" href="#">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center border border-surface-stroke text-status-success shrink-0">
+<span class="material-symbols-outlined text-2xl" data-icon="hourglass_empty">hourglass_empty</span>
+</div>
+<div>
+<h3 class="font-h3-card text-h3-card text-text-primary">Speedup Planner</h3>
+<p class="font-metadata text-metadata text-text-secondary mt-1">Manage construction and research timers.</p>
+</div>
+</a>
+<!-- Calculator Card 4 -->
+<a class="block bg-surface-elevated border border-surface-stroke rounded-xl p-card-padding hover:border-accent-gold transition-colors duration-150 active:scale-95 flex items-center gap-stack-gap-md shadow-sm" href="#">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center border border-surface-stroke text-accent-crimson shrink-0">
+<span class="material-symbols-outlined text-2xl" data-icon="swords">swords</span>
+</div>
+<div>
+<h3 class="font-h3-card text-h3-card text-text-primary">Rally Simulator</h3>
+<p class="font-metadata text-metadata text-text-secondary mt-1">Estimate rally outcomes against key targets.</p>
+</div>
+</a>
+<!-- Calculator Card 5 -->
+<a class="block bg-surface-elevated border border-surface-stroke rounded-xl p-card-padding hover:border-accent-gold transition-colors duration-150 active:scale-95 flex items-center gap-stack-gap-md shadow-sm opacity-60" href="#">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center border border-surface-stroke text-text-muted shrink-0 relative">
+<span class="material-symbols-outlined text-2xl" data-icon="lock">lock</span>
+</div>
+<div>
+<h3 class="font-h3-card text-h3-card text-text-primary flex items-center gap-2">Resource Exchange <span class="bg-surface-variant text-text-muted px-2 py-0.5 rounded text-[10px] uppercase font-bold tracking-wider">Soon</span></h3>
+<p class="font-metadata text-metadata text-text-secondary mt-1">Market value optimization.</p>
+</div>
+</a>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 flex justify-around items-center px-2 py-3 h-20 bg-[#0F1115]/95 backdrop-blur-md shadow-[0_-4px_12px_rgba(0,0,0,0.5)] border-t border-slate-800">
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-slate-200 transition-all duration-200 ease-in-out w-16" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="dashboard">dashboard</span>
+<span class="font-manrope text-[10px] font-bold uppercase tracking-wider">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-slate-200 transition-all duration-200 ease-in-out w-16" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="group">group</span>
+<span class="font-manrope text-[10px] font-bold uppercase tracking-wider">Roster</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-slate-200 transition-all duration-200 ease-in-out w-16" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="event">event</span>
+<span class="font-manrope text-[10px] font-bold uppercase tracking-wider">Events</span>
+</a>
+<a class="flex flex-col items-center justify-center text-amber-400 font-bold bg-slate-800/40 rounded-lg px-3 py-1 transition-all duration-200 ease-in-out w-20" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="calculate" data-weight="fill" style="font-variation-settings: 'FILL' 1;">calculate</span>
+<span class="font-manrope text-[10px] font-bold uppercase tracking-wider">Calculators</span>
+</a>
+</nav>
+<!-- NavigationDrawer (Desktop - Hidden here to focus on Mobile intent as requested, but structurally present if viewport expands) -->
+<aside class="hidden md:flex fixed inset-y-0 left-0 z-[60] flex-col h-full w-80 rounded-r-none border-r border-slate-800 bg-[#14171C] shadow-2xl shadow-black divide-y divide-slate-800 pt-16">
+<!-- Drawer Header Profile -->
+<div class="p-6 flex items-center gap-4">
+<img alt="Commander Avatar" class="w-12 h-12 rounded-full object-cover border-2 border-surface-stroke" data-alt="A close up portrait of a male commander with a serious expression, dark background, tactical lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKYj4zZQ8kevPrqqWgRTtJMd0HuRJjscRaNBMyyguGRDlWEWp1XOlFlcx_2XehmXsihcMFAB3wyXQ28honEoz_fbZofD6fTOntBDJgZ3P3Y7AeXXwIVoIHTpHUfaGbGeG8zeBoVS6rbMLVr1NAxwMlzZh4a5j5NKebsHwk1P6EojcGzp8afZBvYu3_pAlbuy1vkiQKb7fTdG-11pibvqAXy0uC8MdRbfkJftgG-cs3ND4ai-D9luXVw1mv6qrOK-JLCmwvcpz4_DSL"/>
+<div>
+<h2 class="font-manrope text-sm font-bold text-amber-400">Commander Vaelen</h2>
+<div class="text-xs text-slate-400 font-medium">Alliance Lead (R5)</div>
+<div class="text-[10px] text-slate-500 mt-0.5 uppercase tracking-wider">S524 Kingdom</div>
+</div>
+</div>
+<!-- Drawer Links -->
+<div class="flex-1 py-4 flex flex-col gap-1 px-3">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800/30 hover:pl-2 transition-all duration-200 font-manrope text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="policy">policy</span>
+                Alliance Rules
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800/30 hover:pl-2 transition-all duration-200 font-manrope text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="handshake">handshake</span>
+                Diplomacy
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800/30 hover:pl-2 transition-all duration-200 font-manrope text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="swords">swords</span>
+                War Room
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800/30 hover:pl-2 transition-all duration-200 font-manrope text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="inventory_2">inventory_2</span>
+                Archive
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800/30 hover:pl-2 transition-all duration-200 font-manrope text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="settings">settings</span>
+                Settings
+            </a>
+</div>
+</aside>
+</body></html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Alliance Command - Calculators</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed": "#ffe088",
+                      "surface-bright": "#3a3939",
+                      "surface-variant": "#353435",
+                      "on-primary-fixed": "#1a1c20",
+                      "on-secondary": "#2d3038",
+                      "status-warning": "#B45309",
+                      "on-background": "#e5e2e1",
+                      "accent-amber": "#FFBF00",
+                      "text-secondary": "#94A3B8",
+                      "on-primary-fixed-variant": "#45474b",
+                      "accent-crimson": "#9E1B1B",
+                      "secondary": "#c4c6d0",
+                      "surface-dim": "#141314",
+                      "inverse-on-surface": "#313030",
+                      "tertiary-container": "#171000",
+                      "text-muted": "#64748B",
+                      "on-secondary-fixed-variant": "#44474e",
+                      "on-error": "#690005",
+                      "secondary-fixed-dim": "#c4c6d0",
+                      "secondary-fixed": "#e0e2ec",
+                      "inverse-primary": "#5d5e63",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "surface-tint": "#c6c6cc",
+                      "outline": "#909095",
+                      "surface-stroke": "#2D333D",
+                      "primary-container": "#0f1115",
+                      "surface-base": "#0F1115",
+                      "on-surface": "#e5e2e1",
+                      "accent-gold": "#D4AF37",
+                      "on-surface-variant": "#c6c6cb",
+                      "on-primary-container": "#7b7c82",
+                      "primary-fixed": "#e2e2e8",
+                      "on-secondary-fixed": "#191c22",
+                      "on-secondary-container": "#b6b8c1",
+                      "background": "#141314",
+                      "surface-container-low": "#1c1b1c",
+                      "tertiary": "#e9c349",
+                      "status-success": "#2D5A27",
+                      "surface-elevated": "#1C1F26",
+                      "on-primary": "#2f3035",
+                      "accent-ice": "#7895B2",
+                      "primary-fixed-dim": "#c6c6cc",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "on-tertiary-fixed": "#241a00",
+                      "on-tertiary-container": "#987900",
+                      "error": "#ffb4ab",
+                      "surface-container-high": "#2a2a2a",
+                      "primary": "#c6c6cc",
+                      "inverse-surface": "#e5e2e1",
+                      "error-container": "#93000a",
+                      "surface": "#141314",
+                      "text-primary": "#F1F5F9",
+                      "surface-container-highest": "#353435",
+                      "on-tertiary": "#3c2f00",
+                      "on-error-container": "#ffdad6",
+                      "surface-container": "#201f20",
+                      "outline-variant": "#45474b",
+                      "secondary-container": "#464951"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "card-padding": "20px",
+                      "section-gap": "48px",
+                      "container-max-width": "1440px",
+                      "gutter": "24px",
+                      "stack-gap-sm": "8px",
+                      "stack-gap-md": "16px"
+              },
+              "fontFamily": {
+                      "body-md": ["Inter"],
+                      "h2-section": ["Manrope"],
+                      "body-lg": ["Inter"],
+                      "h3-card": ["Manrope"],
+                      "metadata": ["Inter"],
+                      "h1-display": ["Manrope"],
+                      "button-text": ["Manrope"]
+              },
+              "fontSize": {
+                      "body-md": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                      "h2-section": ["24px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                      "body-lg": ["16px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                      "h3-card": ["18px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                      "metadata": ["12px", { "lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                      "h1-display": ["36px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                      "button-text": ["14px", { "lineHeight": "1", "fontWeight": "600" }]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for immersive feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: theme('colors.background');
+        }
+        ::-webkit-scrollbar-thumb {
+            background: theme('colors.surface-stroke');
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: theme('colors.outline-variant');
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background h-screen flex overflow-hidden antialiased">
+<!-- SideNavBar Component -->
+<aside class="fixed left-0 top-0 h-full flex flex-col z-40 bg-slate-950 dark:bg-slate-950 border-r border-slate-800 w-64 hidden md:flex flex-shrink-0">
+<!-- Header -->
+<div class="p-6 border-b border-slate-800 flex items-center gap-4">
+<div class="w-10 h-10 rounded bg-surface-container-high border border-surface-stroke flex items-center justify-center overflow-hidden">
+<!-- Placeholder for Alliance Logo -->
+<span class="material-symbols-outlined text-accent-amber" data-weight="fill" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<div>
+<h1 class="font-h3-card text-h3-card text-amber-500 uppercase tracking-widest font-black">VANGUARD</h1>
+<p class="font-metadata text-metadata text-text-secondary uppercase">Strategic Command</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-1 overflow-y-auto py-4 flex flex-col gap-1">
+<a class="flex items-center gap-3 text-slate-400 py-3 px-4 hover:bg-slate-900/50 hover:text-slate-100 hover:bg-slate-900 transition-all duration-200 active:scale-[0.98] transform transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body-md text-body-md font-bold uppercase tracking-widest text-xs">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 py-3 px-4 hover:bg-slate-900/50 hover:text-slate-100 hover:bg-slate-900 transition-all duration-200 active:scale-[0.98] transform transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-body-md text-body-md font-bold uppercase tracking-widest text-xs">Roster</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 py-3 px-4 hover:bg-slate-900/50 hover:text-slate-100 hover:bg-slate-900 transition-all duration-200 active:scale-[0.98] transform transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="event">event</span>
+<span class="font-body-md text-body-md font-bold uppercase tracking-widest text-xs">Events</span>
+</a>
+<!-- Active Tab -->
+<a class="flex items-center gap-3 bg-slate-900 text-amber-500 border-l-2 border-amber-500 py-3 px-4 active:scale-[0.98] transform transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="calculate" data-weight="fill" style="font-variation-settings: 'FILL' 1;">calculate</span>
+<span class="font-body-md text-body-md font-bold uppercase tracking-widest text-xs">Calculators</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 py-3 px-4 hover:bg-slate-900/50 hover:text-slate-100 hover:bg-slate-900 transition-all duration-200 active:scale-[0.98] transform transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-body-md text-body-md font-bold uppercase tracking-widest text-xs">Knowledge Base</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 py-3 px-4 hover:bg-slate-900/50 hover:text-slate-100 hover:bg-slate-900 transition-all duration-200 active:scale-[0.98] transform transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="admin_panel_settings">admin_panel_settings</span>
+<span class="font-body-md text-body-md font-bold uppercase tracking-widest text-xs">Admin</span>
+</a>
+</nav>
+<!-- CTA -->
+<div class="p-4 border-t border-slate-800">
+<button class="w-full bg-surface-stroke text-text-primary hover:border-accent-gold border border-transparent font-button-text text-button-text py-3 rounded transition-colors duration-150 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+                New Operation
+            </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col md:ml-64 w-full h-full bg-background relative">
+<!-- TopAppBar Component -->
+<header class="flex justify-between items-center px-6 h-16 w-full sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md dark:bg-slate-950/90 border-b border-slate-800 font-manrope tracking-tight text-slate-100 dark:text-slate-100">
+<div class="flex items-center gap-4">
+<!-- Mobile Menu Trigger (Hidden on Desktop) -->
+<button class="md:hidden text-slate-400 hover:text-amber-400 transition-colors duration-150 active:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="text-lg font-black tracking-widest text-slate-100 uppercase">
+                    COMMAND CENTER
+                </div>
+</div>
+<!-- Search and Actions -->
+<div class="flex items-center gap-6">
+<!-- Search (on_right logic simulated) -->
+<div class="hidden sm:flex items-center bg-surface-dim border border-surface-stroke rounded px-3 py-1.5 focus-within:border-accent-gold transition-colors">
+<span class="material-symbols-outlined text-text-muted text-sm mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md font-body-md text-text-primary placeholder-text-muted w-48 p-0" placeholder="Search tools..." type="text"/>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-4">
+<button class="text-slate-400 hover:text-amber-400 transition-colors duration-150 active:opacity-80 transition-opacity relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-accent-crimson rounded-full"></span>
+</button>
+<button class="text-slate-400 hover:text-amber-400 transition-colors duration-150 active:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-surface-stroke overflow-hidden flex items-center justify-center ml-2 cursor-pointer border hover:border-accent-amber transition-colors">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="Default user avatar with dark background and gold text" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA9EUj1llFasMjQqnCk_a_9SNDD0lYZM2co17MYRZE85OWXkyhgAcxMV16rr5cplMwAUlw9eJ5YbNRkRjVZ4z8aHAiuyZHKmuvJAGsAaMyyrv2j-LmW0aGiy-FPJUz0wPjVaG_cqSuNBi1rhfH8rMOY9enCeV2SD5JPUJ8NZtnLcAtY_RHa6CaePNJqdY2PobncTNgist19RGn4PJrWU3i_9G0ETyzK-DAiUcjDsUYvPRptyP6q7ATlBZTgJX8HJquc7YoWEU9cj2P"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="flex-1 overflow-y-auto p-6 md:p-card-padding">
+<div class="max-w-[container-max-width] mx-auto">
+<!-- Page Header -->
+<div class="mb-section-gap flex flex-col gap-2">
+<h2 class="font-h1-display text-h1-display text-text-primary">Strategic Calculators</h2>
+<p class="font-body-lg text-body-lg text-text-secondary max-w-2xl">
+                        Optimize your alliance metrics and event preparation. Select a module below to begin tactical analysis.
+                    </p>
+</div>
+<!-- Calculators Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-gutter">
+<!-- Card 1: Bear Hunt Optimizer -->
+<a class="group block bg-surface-elevated border border-surface-stroke rounded-lg p-card-padding hover:border-accent-amber hover:bg-surface-container-high transition-all duration-200 relative overflow-hidden" href="#">
+<!-- Subtle background gradient hint -->
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-surface-stroke to-transparent group-hover:via-accent-amber transition-all duration-300"></div>
+<div class="flex items-start gap-4">
+<div class="p-3 bg-surface-container-high rounded border border-surface-stroke text-text-secondary group-hover:text-accent-amber group-hover:border-accent-amber/50 transition-colors">
+<span class="material-symbols-outlined text-2xl" data-icon="troubleshoot">troubleshoot</span>
+</div>
+<div class="flex-1 flex flex-col gap-2">
+<h3 class="font-h3-card text-h3-card text-text-primary group-hover:text-accent-gold transition-colors">Bear Hunt Optimizer</h3>
+<p class="font-body-md text-body-md text-text-secondary">
+                                    Maximize trap scores and optimize rally damage distributions across alliance members.
+                                </p>
+</div>
+</div>
+<div class="mt-6 flex items-center text-text-muted group-hover:text-accent-amber font-button-text text-button-text transition-colors">
+                            Launch Module <span class="material-symbols-outlined text-sm ml-1 transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Card 2: Championship Lane Distributor -->
+<a class="group block bg-surface-elevated border border-surface-stroke rounded-lg p-card-padding hover:border-accent-amber hover:bg-surface-container-high transition-all duration-200 relative overflow-hidden" href="#">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-surface-stroke to-transparent group-hover:via-accent-amber transition-all duration-300"></div>
+<div class="flex items-start gap-4">
+<div class="p-3 bg-surface-container-high rounded border border-surface-stroke text-text-secondary group-hover:text-accent-amber group-hover:border-accent-amber/50 transition-colors">
+<span class="material-symbols-outlined text-2xl" data-icon="alt_route">alt_route</span>
+</div>
+<div class="flex-1 flex flex-col gap-2">
+<h3 class="font-h3-card text-h3-card text-text-primary group-hover:text-accent-gold transition-colors">Lane Distributor</h3>
+<p class="font-body-md text-body-md text-text-secondary">
+                                    Assign alliance members to championship lanes based on power metrics and unit types.
+                                </p>
+</div>
+</div>
+<div class="mt-6 flex items-center text-text-muted group-hover:text-accent-amber font-button-text text-button-text transition-colors">
+                            Launch Module <span class="material-symbols-outlined text-sm ml-1 transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Card 3: Strongest Governor Tracker -->
+<a class="group block bg-surface-elevated border border-surface-stroke rounded-lg p-card-padding hover:border-accent-amber hover:bg-surface-container-high transition-all duration-200 relative overflow-hidden" href="#">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-surface-stroke to-transparent group-hover:via-accent-amber transition-all duration-300"></div>
+<div class="flex items-start gap-4">
+<div class="p-3 bg-surface-container-high rounded border border-surface-stroke text-text-secondary group-hover:text-accent-amber group-hover:border-accent-amber/50 transition-colors">
+<span class="material-symbols-outlined text-2xl" data-icon="monitoring">monitoring</span>
+</div>
+<div class="flex-1 flex flex-col gap-2">
+<h3 class="font-h3-card text-h3-card text-text-primary group-hover:text-accent-gold transition-colors">MGE Tracker</h3>
+<p class="font-body-md text-body-md text-text-secondary">
+                                    Track points across all event phases and project final standings for top participants.
+                                </p>
+</div>
+</div>
+<div class="mt-6 flex items-center text-text-muted group-hover:text-accent-amber font-button-text text-button-text transition-colors">
+                            Launch Module <span class="material-symbols-outlined text-sm ml-1 transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Card 4: VIP/Truegold Planner -->
+<a class="group block bg-surface-elevated border border-surface-stroke rounded-lg p-card-padding hover:border-accent-amber hover:bg-surface-container-high transition-all duration-200 relative overflow-hidden" href="#">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-surface-stroke to-transparent group-hover:via-accent-amber transition-all duration-300"></div>
+<div class="flex items-start gap-4">
+<div class="p-3 bg-surface-container-high rounded border border-surface-stroke text-text-secondary group-hover:text-accent-amber group-hover:border-accent-amber/50 transition-colors">
+<span class="material-symbols-outlined text-2xl" data-icon="diamond">diamond</span>
+</div>
+<div class="flex-1 flex flex-col gap-2">
+<h3 class="font-h3-card text-h3-card text-text-primary group-hover:text-accent-gold transition-colors">Investment Planner</h3>
+<p class="font-body-md text-body-md text-text-secondary">
+                                    Calculate required gems for VIP tiers and optimize strategic resource expenditure.
+                                </p>
+</div>
+</div>
+<div class="mt-6 flex items-center text-text-muted group-hover:text-accent-amber font-button-text text-button-text transition-colors">
+                            Launch Module <span class="material-symbols-outlined text-sm ml-1 transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Card 5: Training Optimizer -->
+<a class="group block bg-surface-elevated border border-surface-stroke rounded-lg p-card-padding hover:border-accent-amber hover:bg-surface-container-high transition-all duration-200 relative overflow-hidden" href="#">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-surface-stroke to-transparent group-hover:via-accent-amber transition-all duration-300"></div>
+<div class="flex items-start gap-4">
+<div class="p-3 bg-surface-container-high rounded border border-surface-stroke text-text-secondary group-hover:text-accent-amber group-hover:border-accent-amber/50 transition-colors">
+<span class="material-symbols-outlined text-2xl" data-icon="group_add">group_add</span>
+</div>
+<div class="flex-1 flex flex-col gap-2">
+<h3 class="font-h3-card text-h3-card text-text-primary group-hover:text-accent-gold transition-colors">Training Optimizer</h3>
+<p class="font-body-md text-body-md text-text-secondary">
+                                    Determine exact speedups and resources needed to hit milestones in troop training events.
+                                </p>
+</div>
+</div>
+<div class="mt-6 flex items-center text-text-muted group-hover:text-accent-amber font-button-text text-button-text transition-colors">
+                            Launch Module <span class="material-symbols-outlined text-sm ml-1 transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Card 6: Rally Cap Calculator -->
+<a class="group block bg-surface-elevated border border-surface-stroke rounded-lg p-card-padding hover:border-accent-amber hover:bg-surface-container-high transition-all duration-200 relative overflow-hidden" href="#">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-surface-stroke to-transparent group-hover:via-accent-amber transition-all duration-300"></div>
+<div class="flex items-start gap-4">
+<div class="p-3 bg-surface-container-high rounded border border-surface-stroke text-text-secondary group-hover:text-accent-amber group-hover:border-accent-amber/50 transition-colors">
+<span class="material-symbols-outlined text-2xl" data-icon="account_tree">account_tree</span>
+</div>
+<div class="flex-1 flex flex-col gap-2">
+<h3 class="font-h3-card text-h3-card text-text-primary group-hover:text-accent-gold transition-colors">Rally Cap Analyzer</h3>
+<p class="font-body-md text-body-md text-text-secondary">
+                                    Analyze alliance rally capacity requirements versus available tier distributions.
+                                </p>
+</div>
+</div>
+<div class="mt-6 flex items-center text-text-muted group-hover:text-accent-amber font-button-text text-button-text transition-colors">
+                            Launch Module <span class="material-symbols-outlined text-sm ml-1 transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+</main>
+</body></html>

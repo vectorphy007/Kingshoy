@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Alliance Roster Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed": "#e0e2ec",
+                      "on-primary-container": "#7b7c82",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "on-background": "#e5e2e1",
+                      "surface-tint": "#c6c6cc",
+                      "on-tertiary": "#3c2f00",
+                      "tertiary": "#e9c349",
+                      "surface-elevated": "#1C1F26",
+                      "surface": "#141314",
+                      "on-primary-fixed-variant": "#45474b",
+                      "error": "#ffb4ab",
+                      "on-surface-variant": "#c6c6cb",
+                      "on-surface": "#e5e2e1",
+                      "error-container": "#93000a",
+                      "tertiary-fixed": "#ffe088",
+                      "on-secondary-fixed-variant": "#44474e",
+                      "on-error": "#690005",
+                      "accent-gold": "#D4AF37",
+                      "secondary-container": "#464951",
+                      "outline": "#909095",
+                      "tertiary-container": "#171000",
+                      "surface-stroke": "#2D333D",
+                      "on-secondary-container": "#b6b8c1",
+                      "on-error-container": "#ffdad6",
+                      "outline-variant": "#45474b",
+                      "accent-ice": "#7895B2",
+                      "accent-crimson": "#9E1B1B",
+                      "text-muted": "#64748B",
+                      "accent-amber": "#FFBF00",
+                      "secondary": "#c4c6d0",
+                      "surface-bright": "#3a3939",
+                      "surface-dim": "#141314",
+                      "surface-container-lowest": "#0e0e0e",
+                      "primary-container": "#0f1115",
+                      "secondary-fixed-dim": "#c4c6d0",
+                      "inverse-surface": "#e5e2e1",
+                      "text-secondary": "#94A3B8",
+                      "on-primary": "#2f3035",
+                      "primary": "#c6c6cc",
+                      "status-success": "#2D5A27",
+                      "status-warning": "#B45309",
+                      "on-secondary": "#2d3038",
+                      "surface-base": "#0F1115",
+                      "inverse-on-surface": "#313030",
+                      "primary-fixed": "#e2e2e8",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "surface-container-highest": "#353435",
+                      "surface-variant": "#353435",
+                      "on-primary-fixed": "#1a1c20",
+                      "on-secondary-fixed": "#191c22",
+                      "surface-container-low": "#1c1b1c",
+                      "surface-container-high": "#2a2a2a",
+                      "on-tertiary-fixed": "#241a00",
+                      "primary-fixed-dim": "#c6c6cc",
+                      "inverse-primary": "#5d5e63",
+                      "on-tertiary-container": "#987900",
+                      "surface-container": "#201f20",
+                      "background": "#141314",
+                      "text-primary": "#F1F5F9"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "section-gap": "48px",
+                      "stack-gap-sm": "8px",
+                      "card-padding": "20px",
+                      "stack-gap-md": "16px",
+                      "gutter": "24px",
+                      "container-max-width": "1440px"
+              },
+              "fontFamily": {
+                      "h3-card": [
+                              "Manrope"
+                      ],
+                      "h1-display": [
+                              "Manrope"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "h2-section": [
+                              "Manrope"
+                      ],
+                      "metadata": [
+                              "Inter"
+                      ],
+                      "button-text": [
+                              "Manrope"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "h3-card": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "h1-display": [
+                              "36px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "h2-section": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "metadata": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "button-text": [
+                              "14px",
+                              {
+                                      "lineHeight": "1",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-text-primary antialiased selection:bg-accent-gold/30 selection:text-text-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#0F1115] dark:bg-[#0F1115] docked full-width top-0 border-b border-slate-800 shadow-none border-b border-slate-800/50">
+<div class="flex items-center gap-4">
+<span class="text-xl font-black text-amber-500 uppercase tracking-widest font-manrope tracking-tight font-bold">KINGSHOT COMMAND</span>
+</div>
+<div class="flex items-center gap-6">
+<!-- Search Bar on_right logic (placeholder for actual implementation based on requirements) -->
+<div class="relative hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-[18px]">search</span>
+<input class="bg-surface-elevated border border-surface-stroke rounded-DEFAULT py-1.5 pl-9 pr-4 text-body-md font-body-md text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent-gold transition-colors w-64" placeholder="Search Command..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<button aria-label="notifications" class="text-slate-400 hover:text-amber-400 hover:bg-slate-800/50 transition-colors p-2 rounded-full flex items-center justify-center group">
+<span class="material-symbols-outlined group-active:opacity-80 duration-150">notifications</span>
+</button>
+<button aria-label="settings" class="text-slate-400 hover:text-amber-400 hover:bg-slate-800/50 transition-colors p-2 rounded-full flex items-center justify-center group">
+<span class="material-symbols-outlined group-active:opacity-80 duration-150">settings</span>
+</button>
+<button aria-label="account_circle" class="text-slate-400 hover:text-amber-400 hover:bg-slate-800/50 transition-colors p-2 rounded-full flex items-center justify-center group">
+<img alt="Commander Profile" class="w-8 h-8 rounded-full border border-surface-stroke group-active:opacity-80 duration-150 object-cover" data-alt="Close up portrait of a serious tactical commander in dark uniform with subtle rim lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGJCbmZAfkb8ctR4K5-GSIuFw1P2d-Thrmdh-CilCC6OyBtE8MPMbjEOxFEzZdhyECZVETCGkji5RZy-u6T8I3AUVrH0YyixSTCmqQfYEFK8HV1p7BZPiXmk_Be023V5cCQoQCpmKcYi9UXthSjosZKgCSPvpMbo1_yBSPx3xGE1tcr63kNHEQbwbCbnj6jev_GWCb9ZdeuB0R8tPPm0NSe0qnLgs8mrGxzbk_d6egJy5mm2VkXYt3mqqvfrsBlDCq26JD2VYK1lFD"/>
+</button>
+</div>
+</div>
+</header>
+<!-- SideNavBar & Main Content Wrapper -->
+<div class="flex pt-16 min-h-screen">
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-16 h-[calc(100vh-64px)] w-64 flex flex-col py-6 bg-[#0F1115] dark:bg-[#0F1115] docked left-0 h-full w-64 border-r border-slate-800 shadow-xl border-r border-slate-800 hidden md:flex z-40">
+<div class="px-6 mb-8 flex items-center gap-4">
+<img alt="Alliance Sigil" class="w-12 h-12 rounded-lg border border-accent-gold/30 object-cover" data-alt="A metallic glowing gold tactical shield emblem on a dark textured background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC09BIA6RecuLtNsypPCAzNHZmToty2B7SEfrnJ-8KhbRYkG8CsEMNVB31oL7uZvI8Bvnt2aZ8GXvaBzVHV9IInGqqG1pJzze6KnSydgSusdJn-ubAZBxLUxOqV3eUsf8OuklYrjKXHwLvEjoLdL2RxV-2-qNY0pUZQ-yLxlDwK6G9dWMm5o-GrgePC9IrSYwkdVwe7rykgiQBh5QJcf5s3zLuYi_i6GOfozhE9IQiCDuQaNYbvMDwHpBuSDpQkO7U1x4MZ9H77-8N6"/>
+<div>
+<h2 class="font-h3-card text-h3-card text-text-primary m-0">Sector 01</h2>
+<p class="font-metadata text-metadata text-text-secondary m-0">Alliance Command</p>
+</div>
+</div>
+<div class="flex-1 flex flex-col gap-1 w-full">
+<a class="text-slate-500 hover:text-slate-300 py-3 px-4 flex items-center gap-3 font-manrope text-sm font-medium uppercase tracking-wider hover:bg-slate-800/40 transition-all active:scale-[0.99] duration-100" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                    Dashboard
+                </a>
+<a class="text-amber-400 bg-amber-500/10 border-r-2 border-amber-500 py-3 px-4 flex items-center gap-3 font-manrope text-sm font-medium uppercase tracking-wider active:scale-[0.99] duration-100" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">groups</span>
+                    Roster Hub
+                </a>
+<a class="text-slate-500 hover:text-slate-300 py-3 px-4 flex items-center gap-3 font-manrope text-sm font-medium uppercase tracking-wider hover:bg-slate-800/40 transition-all active:scale-[0.99] duration-100" href="#">
+<span class="material-symbols-outlined">event_note</span>
+                    Intel Center
+                </a>
+<a class="text-slate-500 hover:text-slate-300 py-3 px-4 flex items-center gap-3 font-manrope text-sm font-medium uppercase tracking-wider hover:bg-slate-800/40 transition-all active:scale-[0.99] duration-100" href="#">
+<span class="material-symbols-outlined">calculate</span>
+                    Calculators
+                </a>
+</div>
+<div class="px-4 mt-auto">
+<button class="w-full bg-surface-elevated border border-surface-stroke text-text-primary font-button-text text-button-text py-3 px-4 rounded-DEFAULT hover:border-accent-gold transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">campaign</span>
+                    New Announcement
+                </button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-1 md:ml-64 p-gutter max-w-container-max-width mx-auto w-full">
+<!-- Page Header -->
+<div class="mb-section-gap flex flex-col md:flex-row md:items-end justify-between gap-stack-gap-md">
+<div>
+<h1 class="font-h1-display text-h1-display text-text-primary mb-2">Roster Hub</h1>
+<p class="font-body-lg text-body-lg text-text-secondary">Manage alliance membership, combat metrics, and deployment capabilities.</p>
+</div>
+<div class="flex gap-3">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-[18px]">search</span>
+<input class="bg-surface-elevated border border-surface-stroke rounded-DEFAULT py-2 pl-10 pr-4 text-body-md font-body-md text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent-ice transition-colors w-full md:w-64" placeholder="Search Member..." type="text"/>
+</div>
+<button class="bg-secondary-container text-text-primary font-button-text text-button-text py-2 px-6 rounded-DEFAULT hover:bg-surface-bright transition-colors border border-surface-stroke flex items-center gap-2 whitespace-nowrap">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+                        Add Member
+                    </button>
+</div>
+</div>
+<!-- Sub Navigation -->
+<div class="mb-gutter border-b border-surface-stroke flex overflow-x-auto hide-scrollbar">
+<button class="px-6 py-3 font-button-text text-button-text text-accent-gold border-b-2 border-accent-gold whitespace-nowrap">Leadership (R4/R5)</button>
+<button class="px-6 py-3 font-button-text text-button-text text-text-secondary hover:text-text-primary transition-colors whitespace-nowrap">Core Veterans (R3)</button>
+<button class="px-6 py-3 font-button-text text-button-text text-text-secondary hover:text-text-primary transition-colors whitespace-nowrap">General (R1/R2)</button>
+<button class="px-6 py-3 font-button-text text-button-text text-text-secondary hover:text-text-primary transition-colors whitespace-nowrap">Rally Leaders</button>
+<button class="px-6 py-3 font-button-text text-button-text text-text-secondary hover:text-text-primary transition-colors whitespace-nowrap">Rally Joiners</button>
+</div>
+<!-- Data Table Card -->
+<div class="bg-surface-elevated border border-surface-stroke rounded-lg overflow-hidden flex flex-col shadow-xl">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse whitespace-nowrap">
+<thead>
+<tr class="border-b border-surface-stroke bg-surface-base/50">
+<th class="py-4 px-4 font-metadata text-metadata text-text-muted uppercase tracking-wider group cursor-pointer hover:text-text-primary transition-colors">
+<div class="flex items-center gap-1">Rank <span class="material-symbols-outlined text-[14px] opacity-50 group-hover:opacity-100">arrow_downward</span></div>
+</th>
+<th class="py-4 px-4 font-metadata text-metadata text-text-muted uppercase tracking-wider group cursor-pointer hover:text-text-primary transition-colors">
+<div class="flex items-center gap-1">Member Name <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100">unfold_more</span></div>
+</th>
+<th class="py-4 px-4 font-metadata text-metadata text-text-muted uppercase tracking-wider group cursor-pointer hover:text-text-primary transition-colors">
+<div class="flex items-center gap-1">Town Center <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100">unfold_more</span></div>
+</th>
+<th class="py-4 px-4 font-metadata text-metadata text-text-muted uppercase tracking-wider group cursor-pointer hover:text-text-primary transition-colors text-right">
+<div class="flex items-center justify-end gap-1">Rally Cap <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100">unfold_more</span></div>
+</th>
+<th class="py-4 px-4 font-metadata text-metadata text-text-muted uppercase tracking-wider group cursor-pointer hover:text-text-primary transition-colors text-right">
+<div class="flex items-center justify-end gap-1">Deploy Cap <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100">unfold_more</span></div>
+</th>
+<th class="py-4 px-4 font-metadata text-metadata text-text-muted uppercase tracking-wider">
+                                    Highest Tier
+                                </th>
+<th class="py-4 px-4 font-metadata text-metadata text-text-muted uppercase tracking-wider group cursor-pointer hover:text-text-primary transition-colors text-right">
+<div class="flex items-center justify-end gap-1">Total Troops <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100">unfold_more</span></div>
+</th>
+<th class="py-4 px-4 font-metadata text-metadata text-text-muted uppercase tracking-wider">
+                                    Last Updated
+                                </th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-text-primary divide-y divide-surface-stroke">
+<!-- R5 Row -->
+<tr class="hover:bg-surface-bright/30 transition-colors bg-accent-gold/5 border-l-2 border-l-accent-gold">
+<td class="py-3 px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-accent-gold/20 text-accent-gold border border-accent-gold/30">R5</span>
+</td>
+<td class="py-3 px-4 font-medium flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-stroke flex items-center justify-center text-accent-gold font-bold text-xs">V</div>
+                                    VanguardX
+                                </td>
+<td class="py-3 px-4"><span class="text-accent-ice font-medium">TC30</span> / TG2</td>
+<td class="py-3 px-4 text-right font-mono text-text-secondary">2.5M</td>
+<td class="py-3 px-4 text-right font-mono text-text-secondary">320K</td>
+<td class="py-3 px-4"><span class="text-status-warning font-bold">T11</span></td>
+<td class="py-3 px-4 text-right font-mono">14,250,000</td>
+<td class="py-3 px-4 text-text-muted text-sm">2 hrs ago</td>
+</tr>
+<!-- R4 Row 1 -->
+<tr class="hover:bg-surface-bright/30 transition-colors">
+<td class="py-3 px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-accent-ice/10 text-accent-ice border border-accent-ice/20">R4</span>
+</td>
+<td class="py-3 px-4 font-medium flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-stroke flex items-center justify-center text-accent-ice font-bold text-xs">S</div>
+                                    ShadowStrike
+                                </td>
+<td class="py-3 px-4"><span class="text-accent-ice font-medium">TC29</span> / TG1</td>
+<td class="py-3 px-4 text-right font-mono text-text-secondary">2.1M</td>
+<td class="py-3 px-4 text-right font-mono text-text-secondary">280K</td>
+<td class="py-3 px-4"><span class="text-status-warning font-bold">T10</span></td>
+<td class="py-3 px-4 text-right font-mono">9,800,500</td>
+<td class="py-3 px-4 text-text-muted text-sm">5 hrs ago</td>
+</tr>
+<!-- R4 Row 2 -->
+<tr class="hover:bg-surface-bright/30 transition-colors">
+<td class="py-3 px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-accent-ice/10 text-accent-ice border border-accent-ice/20">R4</span>
+</td>
+<td class="py-3 px-4 font-medium flex items-center gap-3">
+<img alt="Ironclad profile" class="w-8 h-8 rounded-full object-cover" data-alt="Small avatar of a heavily armored fictional soldier helmet" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN51Q8y4xdc2X-J4UC9Ica0OvEXqN97ISyBxMbkcx0r9akgqhIWjLd7dEzmojG_MVtNGkpHrXN-XlYF9rvK5Ztl-kpAX0ZWRsU23VPjOrMR7-cCSa38FOQ20tTeDIA9-w8peTws6P4EhsFFTEuovIaiFLMGlWHuU5gD0ykY6vaJ4Z7vQ28KjaMbnovestu7fdZHyj0WNJiHCpKDSlNWGWgHEJkVLCxIHUWYujQG_HPhph27nkdlxCeKUhBvNttqeCh8-A73PpNd1vW"/>
+                                    Ironclad
+                                </td>
+<td class="py-3 px-4"><span class="text-accent-ice font-medium">TC30</span> / TG0</td>
+<td class="py-3 px-4 text-right font-mono text-text-secondary">2.3M</td>
+<td class="py-3 px-4 text-right font-mono text-text-secondary">300K</td>
+<td class="py-3 px-4"><span class="text-status-warning font-bold">T11</span></td>
+<td class="py-3 px-4 text-right font-mono">11,102,000</td>
+<td class="py-3 px-4 text-text-muted text-sm">1 day ago</td>
+</tr>
+<!-- R4 Row 3 -->
+<tr class="hover:bg-surface-bright/30 transition-colors">
+<td class="py-3 px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-accent-ice/10 text-accent-ice border border-accent-ice/20">R4</span>
+</td>
+<td class="py-3 px-4 font-medium flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-stroke flex items-center justify-center text-accent-ice font-bold text-xs">N</div>
+                                    NovaPrime
+                                </td>
+<td class="py-3 px-4"><span class="text-accent-ice font-medium">TC28</span> / -</td>
+<td class="py-3 px-4 text-right font-mono text-text-secondary">1.8M</td>
+<td class="py-3 px-4 text-right font-mono text-text-secondary">250K</td>
+<td class="py-3 px-4"><span class="text-text-primary font-bold">T10</span></td>
+<td class="py-3 px-4 text-right font-mono">7,450,000</td>
+<td class="py-3 px-4 text-text-muted text-sm">3 hrs ago</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Footer -->
+<div class="px-6 py-4 border-t border-surface-stroke bg-surface-base/30 flex items-center justify-between">
+<span class="font-metadata text-metadata text-text-secondary">Showing 1-4 of 4 Leadership Members</span>
+<div class="flex gap-2">
+<button class="p-1 rounded hover:bg-surface-stroke text-text-muted transition-colors disabled:opacity-50"><span class="material-symbols-outlined text-[20px]">chevron_left</span></button>
+<button class="p-1 rounded hover:bg-surface-stroke text-text-muted transition-colors disabled:opacity-50"><span class="material-symbols-outlined text-[20px]">chevron_right</span></button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

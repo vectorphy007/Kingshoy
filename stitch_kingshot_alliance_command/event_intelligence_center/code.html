@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kingshot Command - Event Intelligence Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#e0e2ec",
+                        "on-primary-container": "#7b7c82",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "on-background": "#e5e2e1",
+                        "surface-tint": "#c6c6cc",
+                        "on-tertiary": "#3c2f00",
+                        "tertiary": "#e9c349",
+                        "surface-elevated": "#1C1F26",
+                        "surface": "#141314",
+                        "on-primary-fixed-variant": "#45474b",
+                        "error": "#ffb4ab",
+                        "on-surface-variant": "#c6c6cb",
+                        "on-surface": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#ffe088",
+                        "on-secondary-fixed-variant": "#44474e",
+                        "on-error": "#690005",
+                        "accent-gold": "#D4AF37",
+                        "secondary-container": "#464951",
+                        "outline": "#909095",
+                        "tertiary-container": "#171000",
+                        "surface-stroke": "#2D333D",
+                        "on-secondary-container": "#b6b8c1",
+                        "on-error-container": "#ffdad6",
+                        "outline-variant": "#45474b",
+                        "accent-ice": "#7895B2",
+                        "accent-crimson": "#9E1B1B",
+                        "text-muted": "#64748B",
+                        "accent-amber": "#FFBF00",
+                        "secondary": "#c4c6d0",
+                        "surface-bright": "#3a3939",
+                        "surface-dim": "#141314",
+                        "surface-container-lowest": "#0e0e0e",
+                        "primary-container": "#0f1115",
+                        "secondary-fixed-dim": "#c4c6d0",
+                        "inverse-surface": "#e5e2e1",
+                        "text-secondary": "#94A3B8",
+                        "on-primary": "#2f3035",
+                        "primary": "#c6c6cc",
+                        "status-success": "#2D5A27",
+                        "status-warning": "#B45309",
+                        "on-secondary": "#2d3038",
+                        "surface-base": "#0F1115",
+                        "inverse-on-surface": "#313030",
+                        "primary-fixed": "#e2e2e8",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "surface-container-highest": "#353435",
+                        "surface-variant": "#353435",
+                        "on-primary-fixed": "#1a1c20",
+                        "on-secondary-fixed": "#191c22",
+                        "surface-container-low": "#1c1b1c",
+                        "surface-container-high": "#2a2a2a",
+                        "on-tertiary-fixed": "#241a00",
+                        "primary-fixed-dim": "#c6c6cc",
+                        "inverse-primary": "#5d5e63",
+                        "on-tertiary-container": "#987900",
+                        "surface-container": "#201f20",
+                        "background": "#141314",
+                        "text-primary": "#F1F5F9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "section-gap": "48px",
+                        "stack-gap-sm": "8px",
+                        "card-padding": "20px",
+                        "stack-gap-md": "16px",
+                        "gutter": "24px",
+                        "container-max-width": "1440px"
+                    },
+                    "fontFamily": {
+                        "h3-card": ["Manrope"],
+                        "h1-display": ["Manrope"],
+                        "body-lg": ["Inter"],
+                        "h2-section": ["Manrope"],
+                        "metadata": ["Inter"],
+                        "button-text": ["Manrope"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h3-card": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "h1-display": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                        "h2-section": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "metadata": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "button-text": ["14px", {"lineHeight": "1", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.text-primary'); }
+        /* Hide scrollbar for clean look but keep functionality */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: theme('colors.surface-stroke'); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: theme('colors.outline-variant'); }
+    </style>
+</head>
+<body class="antialiased min-h-screen overflow-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#0F1115] border-b border-slate-800/50 shadow-none">
+<div class="flex items-center gap-4">
+<span class="text-xl font-black text-amber-500 uppercase tracking-widest font-manrope">KINGSHOT COMMAND</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-slate-400 hover:text-amber-400 hover:bg-slate-800/50 transition-colors p-2 rounded">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-slate-400 hover:text-amber-400 hover:bg-slate-800/50 transition-colors p-2 rounded">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<button class="text-slate-400 hover:text-amber-400 hover:bg-slate-800/50 transition-colors p-2 rounded">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+<img alt="Commander Profile" class="w-8 h-8 rounded-full border border-slate-800 ml-2" data-alt="Close up portrait of a stern military commander in dark uniform against dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF89z97yFRoyZS0m4VUHrpA8OLbhWf0dzevzVZ7l6VHxNWmt7iWHqSqFke5vAXRIv_yaWCnlzo0O21KwqWiFmgxLlxcr4I6o0UxnBIVmJBjk9nCZDeSWXvFC2M0z1SlX-C2csb_LoVL7kFrLqaHNpx4XG5f8uQ0V9gWg6dWgzL5fzyQ1YYqGyo2T_PiDa6vKNY9P_FL5Zo4pVMITLjZGJQQOi_sTMq5gcQl4LG4bq8Lbj599eN9cnFAoAPrfugd10UM-ITLT7oQMk2"/>
+</div>
+</header>
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-16 h-[calc(100vh-64px)] w-64 flex flex-col py-6 bg-[#0F1115] border-r border-slate-800 shadow-xl hidden md:flex z-40">
+<div class="px-6 mb-8 flex items-center gap-4">
+<img alt="Alliance Sigil" class="w-10 h-10 rounded border border-surface-stroke" data-alt="Abstract golden crest on dark metallic background, tactical styling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSf9Iu9OvpjwtyQWKQ0uq0o1411pk9FxSLnOKQN7FpXR1fbLqoSpTNgEKE7K1_SROEqCJrEcoUA0IbdCch1KlRh1SGV5bBfFyErstawDiHjqJ9trcwM-sljZmJp7F-IsZdehI03TGeZNt360FTthaM-tDCcK5s4zi8ZIq3xhCsagV-xn9Q6UHY2JC04siS8XFp6D_nxVj3MeQwJjuJlf7kphNu2lYv-s-VI2S5XTh4c_LcJkqKxf3stdGXuXk2SxyYYBblCWYlnka6"/>
+<div>
+<div class="font-h3-card text-h3-card text-text-primary">Sector 01</div>
+<div class="font-metadata text-metadata text-text-secondary">Alliance Command</div>
+</div>
+</div>
+<div class="flex-1 px-4 space-y-2">
+<a class="text-slate-500 hover:text-slate-300 py-3 px-4 flex items-center gap-3 font-manrope text-sm font-medium uppercase tracking-wider hover:bg-slate-800/40 transition-all rounded" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="text-slate-500 hover:text-slate-300 py-3 px-4 flex items-center gap-3 font-manrope text-sm font-medium uppercase tracking-wider hover:bg-slate-800/40 transition-all rounded" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+                Roster Hub
+            </a>
+<a class="text-amber-400 bg-amber-500/10 border-r-2 border-amber-500 py-3 px-4 flex items-center gap-3 font-manrope text-sm font-medium uppercase tracking-wider scale-[0.99] duration-100 rounded-l" href="#">
+<span class="material-symbols-outlined" data-icon="event_note">event_note</span>
+                Intel Center
+            </a>
+<a class="text-slate-500 hover:text-slate-300 py-3 px-4 flex items-center gap-3 font-manrope text-sm font-medium uppercase tracking-wider hover:bg-slate-800/40 transition-all rounded" href="#">
+<span class="material-symbols-outlined" data-icon="calculate">calculate</span>
+                Calculators
+            </a>
+</div>
+<div class="px-6 mt-auto">
+<button class="w-full bg-slate-800 border border-surface-stroke text-text-primary hover:border-accent-gold transition-colors font-button-text text-button-text py-3 rounded text-center">
+                New Announcement
+            </button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-16 md:pl-64 h-screen flex flex-col overflow-hidden">
+<!-- Header Section -->
+<div class="px-gutter py-6 flex justify-between items-end border-b border-surface-stroke shrink-0">
+<div>
+<h1 class="font-h1-display text-h1-display text-text-primary">Intelligence Center</h1>
+<p class="font-body-md text-body-md text-text-secondary mt-1">Operational Cycle &amp; Event Tracking</p>
+</div>
+<div class="flex gap-2">
+<button class="bg-surface-elevated border border-surface-stroke text-text-primary px-4 py-2 font-button-text text-button-text rounded hover:border-accent-ice transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span> Cycle View
+                </button>
+<button class="bg-surface-elevated border border-surface-stroke text-text-primary px-4 py-2 font-button-text text-button-text rounded hover:border-accent-ice transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">filter_list</span> Filter
+                </button>
+</div>
+</div>
+<!-- Scrollable Content Grid -->
+<div class="flex-1 overflow-y-auto p-gutter">
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter max-w-container-max-width mx-auto pb-section-gap">
+<!-- Left Column: Calendar (col-span-8) -->
+<div class="xl:col-span-8 space-y-gutter">
+<!-- Macro Calendar Card -->
+<div class="bg-surface-elevated border border-surface-stroke rounded-lg overflow-hidden">
+<div class="p-card-padding border-b border-surface-stroke flex justify-between items-center bg-surface-dim">
+<h3 class="font-h3-card text-h3-card text-text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-ice">calendar_view_month</span>
+                                Kingshot Cycle (Month 4)
+                            </h3>
+<div class="flex gap-4">
+<div class="flex items-center gap-2 font-metadata text-metadata text-text-secondary">
+<div class="w-2 h-2 rounded-full bg-accent-amber"></div> PvP Phase
+                                </div>
+<div class="flex items-center gap-2 font-metadata text-metadata text-text-secondary">
+<div class="w-2 h-2 rounded-full bg-accent-ice"></div> PvE Phase
+                                </div>
+</div>
+</div>
+<div class="p-4">
+<!-- Week headers -->
+<div class="grid grid-cols-7 gap-2 mb-2">
+<div class="text-center font-metadata text-metadata text-text-secondary uppercase">Mon</div>
+<div class="text-center font-metadata text-metadata text-text-secondary uppercase">Tue</div>
+<div class="text-center font-metadata text-metadata text-text-secondary uppercase">Wed</div>
+<div class="text-center font-metadata text-metadata text-text-secondary uppercase">Thu</div>
+<div class="text-center font-metadata text-metadata text-text-secondary uppercase">Fri</div>
+<div class="text-center font-metadata text-metadata text-text-secondary uppercase">Sat</div>
+<div class="text-center font-metadata text-metadata text-text-secondary uppercase text-accent-amber">Sun</div>
+</div>
+<!-- Calendar Grid (Bento Style) -->
+<div class="grid grid-cols-7 gap-2">
+<!-- Week 1 -->
+<div class="aspect-square bg-surface border border-surface-stroke rounded p-2 relative group cursor-pointer hover:border-accent-ice transition-colors">
+<span class="font-metadata text-metadata text-text-secondary absolute top-2 right-2">1</span>
+</div>
+<div class="aspect-square bg-surface border border-surface-stroke rounded p-2 relative group cursor-pointer hover:border-accent-ice transition-colors">
+<span class="font-metadata text-metadata text-text-secondary absolute top-2 right-2">2</span>
+</div>
+<div class="aspect-square bg-surface border border-surface-stroke rounded p-2 relative group cursor-pointer hover:border-accent-ice transition-colors">
+<span class="font-metadata text-metadata text-text-secondary absolute top-2 right-2">3</span>
+</div>
+<div class="aspect-square bg-surface border border-accent-ice/50 rounded p-2 relative group cursor-pointer hover:border-accent-ice transition-colors bg-accent-ice/5">
+<span class="font-metadata text-metadata text-text-primary absolute top-2 right-2">4</span>
+<div class="absolute bottom-2 left-2 right-2 h-1 bg-accent-ice rounded"></div>
+<div class="mt-4 font-metadata text-metadata text-accent-ice text-xs line-clamp-2">Strongest Gov: Training</div>
+</div>
+<div class="aspect-square bg-surface border border-surface-stroke rounded p-2 relative group cursor-pointer hover:border-accent-ice transition-colors">
+<span class="font-metadata text-metadata text-text-secondary absolute top-2 right-2">5</span>
+</div>
+<div class="aspect-square bg-surface border border-surface-stroke rounded p-2 relative group cursor-pointer hover:border-accent-ice transition-colors">
+<span class="font-metadata text-metadata text-text-secondary absolute top-2 right-2">6</span>
+</div>
+<div class="aspect-square bg-surface border border-surface-stroke rounded p-2 relative group cursor-pointer hover:border-accent-ice transition-colors">
+<span class="font-metadata text-metadata text-text-secondary absolute top-2 right-2">7</span>
+</div>
+<!-- Week 2 -->
+<div class="aspect-square bg-surface border border-surface-stroke rounded p-2 relative group cursor-pointer hover:border-accent-ice transition-colors">
+<span class="font-metadata text-metadata text-text-secondary absolute top-2 right-2">8</span>
+</div>
+<div class="aspect-square bg-surface border border-surface-stroke rounded p-2 relative group cursor-pointer hover:border-accent-ice transition-colors">
+<span class="font-metadata text-metadata text-text-secondary absolute top-2 right-2">9</span>
+</div>
+<div class="aspect-square bg-surface border border-surface-stroke rounded p-2 relative group cursor-pointer hover:border-accent-ice transition-colors">
+<span class="font-metadata text-metadata text-text-secondary absolute top-2 right-2">10</span>
+</div>
+<div class="aspect-square bg-surface border border-surface-stroke rounded p-2 relative group cursor-pointer hover:border-accent-ice transition-colors">
+<span class="font-metadata text-metadata text-text-secondary absolute top-2 right-2">11</span>
+</div>
+<div class="aspect-square bg-surface border border-accent-amber/50 rounded p-2 relative group cursor-pointer hover:border-accent-amber transition-colors bg-accent-amber/5">
+<span class="font-metadata text-metadata text-text-primary absolute top-2 right-2">12</span>
+<div class="absolute bottom-2 left-2 right-2 h-1 bg-accent-amber rounded"></div>
+<div class="mt-4 font-metadata text-metadata text-accent-amber text-xs line-clamp-2">Viking Vengeance</div>
+</div>
+<div class="aspect-square bg-surface border border-accent-amber/50 rounded p-2 relative group cursor-pointer hover:border-accent-amber transition-colors bg-accent-amber/5">
+<span class="font-metadata text-metadata text-text-primary absolute top-2 right-2">13</span>
+<div class="absolute bottom-2 left-2 right-2 h-1 bg-accent-amber rounded"></div>
+</div>
+<div class="aspect-square bg-surface border border-surface-stroke rounded p-2 relative group cursor-pointer hover:border-accent-ice transition-colors">
+<span class="font-metadata text-metadata text-text-secondary absolute top-2 right-2">14</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Event Guide Snippets -->
+<div class="grid grid-cols-2 gap-gutter">
+<div class="bg-surface-elevated border border-surface-stroke rounded-lg p-card-padding">
+<h3 class="font-h3-card text-h3-card text-text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-amber">swords</span> Viking Vengeance Guide
+                            </h3>
+<p class="font-body-md text-body-md text-text-secondary mb-4 line-clamp-3">
+                                Coordinate rally timing. Focus on level 4+ camps for maximum alliance points. Reserve action points for phase 2.
+                            </p>
+<a class="text-accent-ice font-button-text text-button-text hover:underline flex items-center gap-1" href="#">
+                                View Full Protocol <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<div class="bg-surface-elevated border border-surface-stroke rounded-lg p-card-padding">
+<h3 class="font-h3-card text-h3-card text-text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-ice">target</span> Bear Hunt Strategy
+                            </h3>
+<p class="font-body-md text-body-md text-text-secondary mb-4 line-clamp-3">
+                                Deploy highest DPS marches. Position close to the trap before activation. Avoid sending siege units.
+                            </p>
+<a class="text-accent-ice font-button-text text-button-text hover:underline flex items-center gap-1" href="#">
+                                View Full Protocol <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Right Column: Tracker & Details (col-span-4) -->
+<div class="xl:col-span-4 space-y-gutter">
+<!-- Selected Day Detail Card -->
+<div class="bg-surface-elevated border border-accent-ice shadow-[0_0_15px_rgba(120,149,178,0.1)] rounded-lg overflow-hidden">
+<div class="p-card-padding border-b border-surface-stroke bg-accent-ice/5">
+<div class="flex justify-between items-start mb-2">
+<span class="font-metadata text-metadata text-accent-ice uppercase tracking-wider">Selected Detail</span>
+<span class="font-metadata text-metadata text-text-secondary">Day 4</span>
+</div>
+<h2 class="font-h2-section text-h2-section text-text-primary">Combat Training Phase</h2>
+</div>
+<div class="p-card-padding space-y-4">
+<div>
+<h4 class="font-metadata text-metadata text-text-secondary uppercase mb-2">Optimal Activities</h4>
+<ul class="space-y-2 font-body-md text-body-md text-text-primary">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-status-success text-[18px] mt-0.5">check_circle</span>
+<span>Train T10+ troops for maximum point efficiency.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-status-success text-[18px] mt-0.5">check_circle</span>
+<span>Use saved universal speedups if approaching next reward tier.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-status-warning text-[18px] mt-0.5">warning</span>
+<span class="text-text-secondary">Do not claim generic training rewards until server reset.</span>
+</li>
+</ul>
+</div>
+<div class="pt-4 border-t border-surface-stroke">
+<button class="w-full bg-slate-800 border border-surface-stroke text-text-primary hover:border-accent-ice transition-colors font-button-text text-button-text py-2 rounded">
+                                    Log Activity
+                                </button>
+</div>
+</div>
+</div>
+<!-- Daily Tracker List -->
+<div class="bg-surface-elevated border border-surface-stroke rounded-lg">
+<div class="p-card-padding border-b border-surface-stroke">
+<h3 class="font-h3-card text-h3-card text-text-primary">Active Event Tracker</h3>
+</div>
+<div class="p-2">
+<!-- Tracker Item -->
+<div class="p-3 border-b border-surface-stroke last:border-0 hover:bg-surface-bright/50 transition-colors rounded">
+<div class="flex justify-between items-center mb-1">
+<span class="font-body-md text-body-md font-semibold text-text-primary">Strongest Governor</span>
+<span class="bg-accent-ice/10 text-accent-ice px-2 py-0.5 rounded font-metadata text-metadata">Day 4/5</span>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<div class="flex-1 h-1.5 bg-surface-stroke rounded-full overflow-hidden">
+<div class="h-full bg-accent-ice w-[80%] rounded-full"></div>
+</div>
+<span class="font-metadata text-metadata text-text-secondary tabular-nums">Phase 4</span>
+</div>
+</div>
+<!-- Tracker Item -->
+<div class="p-3 border-b border-surface-stroke last:border-0 hover:bg-surface-bright/50 transition-colors rounded">
+<div class="flex justify-between items-center mb-1">
+<span class="font-body-md text-body-md font-semibold text-text-primary">Alliance Mobilization</span>
+<span class="bg-surface-stroke text-text-secondary px-2 py-0.5 rounded font-metadata text-metadata">Starts 2d</span>
+</div>
+<div class="font-metadata text-metadata text-text-secondary mt-1">
+                                    Prep: Save action points &amp; gathering boosts.
+                                </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

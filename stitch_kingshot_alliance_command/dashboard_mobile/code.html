@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kingshot Alliance Dashboard</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#e5e2e1",
+                    "secondary": "#c4c6d0",
+                    "accent-crimson": "#9E1B1B",
+                    "surface-base": "#0F1115",
+                    "surface-tint": "#c6c6cc",
+                    "on-tertiary-container": "#987900",
+                    "secondary-fixed-dim": "#c4c6d0",
+                    "primary-fixed": "#e2e2e8",
+                    "on-primary": "#2f3035",
+                    "on-error": "#690005",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "text-secondary": "#94A3B8",
+                    "on-background": "#e5e2e1",
+                    "primary-fixed-dim": "#c6c6cc",
+                    "on-primary-container": "#7b7c82",
+                    "on-primary-fixed": "#1a1c20",
+                    "inverse-on-surface": "#313030",
+                    "text-primary": "#F1F5F9",
+                    "surface-elevated": "#1C1F26",
+                    "error": "#ffb4ab",
+                    "secondary-container": "#464951",
+                    "primary": "#c6c6cc",
+                    "outline-variant": "#45474b",
+                    "on-error-container": "#ffdad6",
+                    "inverse-primary": "#5d5e63",
+                    "surface-variant": "#353435",
+                    "status-warning": "#B45309",
+                    "outline": "#909095",
+                    "on-secondary-container": "#b6b8c1",
+                    "on-surface-variant": "#c6c6cb",
+                    "surface-container-high": "#2a2a2a",
+                    "inverse-surface": "#e5e2e1",
+                    "on-tertiary": "#3c2f00",
+                    "background": "#141314",
+                    "primary-container": "#0f1115",
+                    "on-primary-fixed-variant": "#45474b",
+                    "surface-container": "#201f20",
+                    "accent-amber": "#FFBF00",
+                    "accent-gold": "#D4AF37",
+                    "status-success": "#2D5A27",
+                    "on-secondary": "#2d3038",
+                    "surface-stroke": "#2D333D",
+                    "surface": "#141314",
+                    "surface-container-highest": "#353435",
+                    "tertiary-fixed": "#ffe088",
+                    "accent-ice": "#7895B2",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "on-tertiary-fixed": "#241a00",
+                    "secondary-fixed": "#e0e2ec",
+                    "error-container": "#93000a",
+                    "surface-container-low": "#1c1b1c",
+                    "surface-bright": "#3a3939",
+                    "tertiary": "#e9c349",
+                    "surface-dim": "#141314",
+                    "on-secondary-fixed": "#191c22",
+                    "tertiary-container": "#171000",
+                    "on-secondary-fixed-variant": "#44474e",
+                    "surface-container-lowest": "#0e0e0e",
+                    "text-muted": "#64748B"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-gap-sm": "8px",
+                    "section-gap": "48px",
+                    "gutter": "24px",
+                    "container-max-width": "1440px",
+                    "stack-gap-md": "16px",
+                    "card-padding": "20px"
+            },
+            "fontFamily": {
+                    "button-text": [
+                            "Manrope"
+                    ],
+                    "h2-section": [
+                            "Manrope"
+                    ],
+                    "h1-display": [
+                            "Manrope"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "metadata": [
+                            "Inter"
+                    ],
+                    "h3-card": [
+                            "Manrope"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "button-text": [
+                            "14px",
+                            {
+                                    "lineHeight": "1",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "h2-section": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "h1-display": [
+                            "36px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "body-lg": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "metadata": [
+                            "12px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "letterSpacing": "0.02em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "h3-card": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.5",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Custom scrollbar for horizontal heatmap */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-base text-text-primary min-h-screen font-body-md text-body-md pb-[96px] pt-[80px]">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-4 h-16 bg-[#0F1115] dark:bg-[#0F1115] border-b border-slate-800 shadow-none">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-100 dark:text-slate-100 active:scale-95 duration-150 cursor-pointer">menu</span>
+<h1 class="text-lg font-black tracking-widest text-slate-100 dark:text-slate-100 uppercase">KINGSHOT</h1>
+</div>
+<img alt="Commander Profile Avatar" class="w-8 h-8 rounded-full border border-surface-stroke object-cover" data-alt="close-up portrait of a male commander with a serious expression, subtle dramatic side lighting, dark tactical uniform visible at collar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdXB_wcgVlXhqhwyIqZwRk0aHmDUg8Q1woLNjAL_-pv4GZYoKnKetzFQzFHwd6KUXhV_L29VeRTtuTNYYAOcmX48yVX7S1kcbiEfaDfWN_dUkUxpVLawnafzFcpCELu-yJ-DqfqkiN7eyl9eprlH_xOrK3e3zis0hss9xKl54mJ-LOpMX2o4fLm5kdhZSzNlwC6luKcaCRWffdACgAlsCJmPauLgrXpnMmtkY23ubDAX-CtwWuWNcWXJM4m23PN_Nub1x5LIL5Dy1r"/>
+</nav>
+<!-- Main Content Canvas -->
+<main class="px-4 flex flex-col gap-stack-gap-md max-w-container-max-width mx-auto">
+<!-- Widget 1: Upcoming Events Countdown -->
+<section class="bg-surface-elevated border border-surface-stroke rounded-xl overflow-hidden relative group">
+<!-- Decorative background map/texture -->
+<div class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&amp;fit=crop&amp;q=80')] bg-cover bg-center" data-alt="abstract dark topographical map texture with subtle metallic gold contour lines on deep slate background"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-elevated via-surface-elevated/80 to-transparent"></div>
+<div class="relative p-card-padding flex flex-col items-center text-center z-10">
+<div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-surface-base border border-surface-stroke mb-4 shadow-[0_0_15px_rgba(212,175,55,0.15)]">
+<span class="material-symbols-outlined text-accent-gold" style="font-variation-settings: 'FILL' 1;">swords</span>
+</div>
+<h2 class="font-h2-section text-h2-section text-text-primary mb-1">Capital Siege</h2>
+<p class="font-metadata text-metadata text-text-secondary uppercase tracking-widest mb-6">Alliance Objective</p>
+<!-- Countdown -->
+<div class="flex gap-4 justify-center w-full">
+<div class="flex flex-col items-center">
+<span class="font-h1-display text-h1-display text-text-primary tabular-nums tracking-tighter">04</span>
+<span class="font-metadata text-metadata text-text-muted mt-1">HRS</span>
+</div>
+<span class="font-h1-display text-h1-display text-surface-stroke">:</span>
+<div class="flex flex-col items-center">
+<span class="font-h1-display text-h1-display text-text-primary tabular-nums tracking-tighter">42</span>
+<span class="font-metadata text-metadata text-text-muted mt-1">MIN</span>
+</div>
+<span class="font-h1-display text-h1-display text-surface-stroke">:</span>
+<div class="flex flex-col items-center">
+<span class="font-h1-display text-h1-display text-accent-gold tabular-nums tracking-tighter">18</span>
+<span class="font-metadata text-metadata text-accent-gold/50 mt-1">SEC</span>
+</div>
+</div>
+<button class="mt-8 w-full bg-surface-base border border-surface-stroke font-button-text text-button-text text-text-primary py-3 rounded-lg hover:border-accent-gold transition-colors">
+                    View Directives
+                </button>
+</div>
+</section>
+<!-- Widget 2: Quick Alliance Announcements -->
+<section class="bg-surface-elevated border border-surface-stroke rounded-xl p-card-padding">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-h3-card text-h3-card text-text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-ice text-lg">campaign</span>
+                    Command Comms
+                </h3>
+<span class="font-metadata text-metadata text-text-secondary">View All</span>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Urgent Item -->
+<div class="flex items-start gap-3 p-3 bg-surface-base rounded-lg border-l-2 border-accent-crimson">
+<span class="material-symbols-outlined text-accent-crimson mt-0.5" style="font-variation-settings: 'FILL' 1;">warning</span>
+<div>
+<p class="font-body-md text-body-md text-text-primary">All R4s report to War Room immediately for coordinate assignments.</p>
+<p class="font-metadata text-metadata text-text-muted mt-1">10 mins ago • High Command</p>
+</div>
+</div>
+<!-- Info Item -->
+<div class="flex items-start gap-3 p-3 bg-surface-base rounded-lg border-l-2 border-accent-ice">
+<span class="material-symbols-outlined text-accent-ice mt-0.5">info</span>
+<div>
+<p class="font-body-md text-body-md text-text-primary">Tech donation focus shifted to Advanced Siege Engineering.</p>
+<p class="font-metadata text-metadata text-text-muted mt-1">2 hrs ago • Logistics</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Widget 3: Availability Heatmap -->
+<section class="flex flex-col gap-3">
+<div class="flex justify-between items-end px-1">
+<h3 class="font-h3-card text-h3-card text-text-primary">Combat Readiness</h3>
+<span class="font-metadata text-metadata text-text-secondary">Next 24H</span>
+</div>
+<div class="flex overflow-x-auto hide-scrollbar snap-x gap-stack-gap-sm pb-2">
+<!-- Heatmap Blocks -->
+<div class="flex-shrink-0 w-24 p-3 bg-surface-elevated border border-surface-stroke rounded-lg snap-start flex flex-col justify-between h-28 relative overflow-hidden">
+<div class="absolute bottom-0 left-0 w-full h-1 bg-status-warning/50"></div>
+<span class="font-metadata text-metadata text-text-secondary">18:00</span>
+<div class="text-center">
+<span class="font-h2-section text-h2-section text-text-primary">42</span>
+<span class="font-metadata text-metadata text-text-muted block">Members</span>
+</div>
+</div>
+<div class="flex-shrink-0 w-24 p-3 bg-surface-elevated border border-surface-stroke rounded-lg snap-start flex flex-col justify-between h-28 relative overflow-hidden">
+<div class="absolute bottom-0 left-0 w-full h-1 bg-status-success"></div>
+<span class="font-metadata text-metadata text-text-secondary">20:00</span>
+<div class="text-center">
+<span class="font-h2-section text-h2-section text-text-primary">87</span>
+<span class="font-metadata text-metadata text-text-muted block">Members</span>
+</div>
+</div>
+<div class="flex-shrink-0 w-24 p-3 bg-surface-elevated border border-accent-gold/50 rounded-lg snap-start flex flex-col justify-between h-28 relative overflow-hidden bg-accent-gold/5">
+<div class="absolute bottom-0 left-0 w-full h-1 bg-accent-gold"></div>
+<span class="font-metadata text-metadata text-accent-gold">22:00</span>
+<div class="text-center">
+<span class="font-h2-section text-h2-section text-accent-gold">114</span>
+<span class="font-metadata text-metadata text-text-muted block">Members</span>
+</div>
+<span class="absolute top-2 right-2 flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-gold opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-accent-gold"></span>
+</span>
+</div>
+<div class="flex-shrink-0 w-24 p-3 bg-surface-elevated border border-surface-stroke rounded-lg snap-start flex flex-col justify-between h-28 relative overflow-hidden">
+<div class="absolute bottom-0 left-0 w-full h-1 bg-status-success/80"></div>
+<span class="font-metadata text-metadata text-text-secondary">00:00</span>
+<div class="text-center">
+<span class="font-h2-section text-h2-section text-text-primary">76</span>
+<span class="font-metadata text-metadata text-text-muted block">Members</span>
+</div>
+</div>
+<div class="flex-shrink-0 w-24 p-3 bg-surface-elevated border border-surface-stroke rounded-lg snap-start flex flex-col justify-between h-28 relative overflow-hidden">
+<div class="absolute bottom-0 left-0 w-full h-1 bg-status-warning/30"></div>
+<span class="font-metadata text-metadata text-text-secondary">02:00</span>
+<div class="text-center">
+<span class="font-h2-section text-h2-section text-text-primary">21</span>
+<span class="font-metadata text-metadata text-text-muted block">Members</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Widget 4: Recent Activity Feed -->
+<section class="mt-2">
+<h3 class="font-h3-card text-h3-card text-text-primary mb-4 px-1">Alliance Ledger</h3>
+<div class="bg-surface-elevated border border-surface-stroke rounded-xl p-card-padding">
+<div class="relative border-l border-surface-stroke ml-3 pl-6 flex flex-col gap-6">
+<!-- Feed Item 1 -->
+<div class="relative">
+<span class="absolute -left-[35px] bg-surface-base border border-surface-stroke rounded-full w-8 h-8 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-accent-ice">shield</span>
+</span>
+<p class="font-body-md text-body-md text-text-primary"><span class="font-semibold text-text-primary">Vaelen</span> deployed garrison to Fortress Beta.</p>
+<p class="font-metadata text-metadata text-text-muted mt-0.5">Just now</p>
+</div>
+<!-- Feed Item 2 -->
+<div class="relative">
+<span class="absolute -left-[35px] bg-surface-base border border-surface-stroke rounded-full w-8 h-8 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-status-success">group_add</span>
+</span>
+<p class="font-body-md text-body-md text-text-primary"><span class="font-semibold text-text-primary">Ironclad</span> joined the alliance.</p>
+<p class="font-metadata text-metadata text-text-muted mt-0.5">45 mins ago</p>
+</div>
+<!-- Feed Item 3 -->
+<div class="relative">
+<span class="absolute -left-[35px] bg-surface-base border border-surface-stroke rounded-full w-8 h-8 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-accent-gold">inventory_2</span>
+</span>
+<p class="font-body-md text-body-md text-text-primary">Alliance Treasury unlocked <span class="font-semibold text-accent-gold">Level 4 Vault</span>.</p>
+<p class="font-metadata text-metadata text-text-muted mt-0.5">3 hours ago</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-2 py-3 h-20 bg-[#0F1115]/95 backdrop-blur-md border-t border-slate-800 shadow-[0_-4px_12px_rgba(0,0,0,0.5)] md:hidden">
+<!-- Active Tab: Dashboard -->
+<a class="flex flex-col items-center justify-center text-amber-400 font-bold bg-slate-800/40 rounded-lg px-3 py-1 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-manrope text-[10px] font-bold uppercase tracking-wider mt-1">Dashboard</span>
+</a>
+<!-- Inactive Tab: Roster -->
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-slate-200 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-manrope text-[10px] font-bold uppercase tracking-wider mt-1">Roster</span>
+</a>
+<!-- Inactive Tab: Events -->
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-slate-200 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">event</span>
+<span class="font-manrope text-[10px] font-bold uppercase tracking-wider mt-1">Events</span>
+</a>
+<!-- Inactive Tab: Calculators -->
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-slate-200 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">calculate</span>
+<span class="font-manrope text-[10px] font-bold uppercase tracking-wider mt-1">Calculators</span>
+</a>
+</nav>
+</body></html>

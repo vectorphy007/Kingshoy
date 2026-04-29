@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Control Panel - Vanguard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed": "#ffe088",
+                        "surface-bright": "#3a3939",
+                        "surface-variant": "#353435",
+                        "on-primary-fixed": "#1a1c20",
+                        "on-secondary": "#2d3038",
+                        "status-warning": "#B45309",
+                        "on-background": "#e5e2e1",
+                        "accent-amber": "#FFBF00",
+                        "text-secondary": "#94A3B8",
+                        "on-primary-fixed-variant": "#45474b",
+                        "accent-crimson": "#9E1B1B",
+                        "secondary": "#c4c6d0",
+                        "surface-dim": "#141314",
+                        "inverse-on-surface": "#313030",
+                        "tertiary-container": "#171000",
+                        "text-muted": "#64748B",
+                        "on-secondary-fixed-variant": "#44474e",
+                        "on-error": "#690005",
+                        "secondary-fixed-dim": "#c4c6d0",
+                        "secondary-fixed": "#e0e2ec",
+                        "inverse-primary": "#5d5e63",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "surface-tint": "#c6c6cc",
+                        "outline": "#909095",
+                        "surface-stroke": "#2D333D",
+                        "primary-container": "#0f1115",
+                        "surface-base": "#0F1115",
+                        "on-surface": "#e5e2e1",
+                        "accent-gold": "#D4AF37",
+                        "on-surface-variant": "#c6c6cb",
+                        "on-primary-container": "#7b7c82",
+                        "primary-fixed": "#e2e2e8",
+                        "on-secondary-fixed": "#191c22",
+                        "on-secondary-container": "#b6b8c1",
+                        "background": "#141314",
+                        "surface-container-low": "#1c1b1c",
+                        "tertiary": "#e9c349",
+                        "status-success": "#2D5A27",
+                        "surface-elevated": "#1C1F26",
+                        "on-primary": "#2f3035",
+                        "accent-ice": "#7895B2",
+                        "primary-fixed-dim": "#c6c6cc",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-tertiary-container": "#987900",
+                        "error": "#ffb4ab",
+                        "surface-container-high": "#2a2a2a",
+                        "primary": "#c6c6cc",
+                        "inverse-surface": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "surface": "#141314",
+                        "text-primary": "#F1F5F9",
+                        "surface-container-highest": "#353435",
+                        "on-tertiary": "#3c2f00",
+                        "on-error-container": "#ffdad6",
+                        "surface-container": "#201f20",
+                        "outline-variant": "#45474b",
+                        "secondary-container": "#464951"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "card-padding": "20px",
+                        "section-gap": "48px",
+                        "container-max-width": "1440px",
+                        "gutter": "24px",
+                        "stack-gap-sm": "8px",
+                        "stack-gap-md": "16px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Inter"],
+                        "h2-section": ["Manrope"],
+                        "body-lg": ["Inter"],
+                        "h3-card": ["Manrope"],
+                        "metadata": ["Inter"],
+                        "h1-display": ["Manrope"],
+                        "button-text": ["Manrope"]
+                    },
+                    fontSize: {
+                        "body-md": ["14px", { lineHeight: "1.5", fontWeight: "400" }],
+                        "h2-section": ["24px", { lineHeight: "1.3", letterSpacing: "-0.01em", fontWeight: "700" }],
+                        "body-lg": ["16px", { lineHeight: "1.6", fontWeight: "500" }],
+                        "h3-card": ["18px", { lineHeight: "1.4", fontWeight: "600" }],
+                        "metadata": ["12px", { lineHeight: "1.4", letterSpacing: "0.02em", fontWeight: "500" }],
+                        "h1-display": ["36px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "800" }],
+                        "button-text": ["14px", { lineHeight: "1", fontWeight: "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Tactical grid background */
+        .bg-tactical-grid {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(45, 51, 61, 0.2) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(45, 51, 61, 0.2) 1px, transparent 1px);
+        }
+        
+        /* Custom scrollbar for inner containers */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: theme('colors.surface-stroke');
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex selection:bg-accent-gold/30 selection:text-accent-gold">
+<!-- SideNavBar (Shared Component) -->
+<nav class="hidden md:flex flex-col bg-slate-950 dark:bg-slate-950 h-screen w-64 border-r border-slate-800 fixed left-0 top-0 z-40">
+<!-- Header -->
+<div class="p-6 border-b border-surface-stroke mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-DEFAULT bg-surface-elevated border border-surface-stroke flex items-center justify-center overflow-hidden">
+<img alt="Alliance Logo" class="w-full h-full object-cover mix-blend-luminosity opacity-80" data-alt="Abstract geometric gold and steel metallic emblem on dark background representing strategic command" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXGzwX8yIjr3I6OOw31K_Dwr-1p6lPdAz04DUp6kxIJQCkweG04iD-3xRncsANyu0nmP3KLoo5NP5c2U4AcKDfW8C4KwNyfz8Z7a5XF7yY9DMGiE2I4DUMnSEGFFyNzDOCQ4cV7rDd-hwUPbAc_0GDBHJ1CIerDtwD6eKsUa0lJlp0ieWACqEN9lOJgVriHtAvz3P1tvpmcQgnjMhNO97-bf-3aicvFfUkfc8auBhPI9ZysqjIQWCov0LEwC7nKhnUncBbTrg_G9XL"/>
+</div>
+<div>
+<h1 class="font-manrope text-xs font-bold uppercase tracking-widest text-amber-500 dark:text-amber-400">VANGUARD</h1>
+<p class="font-metadata text-text-secondary text-[10px] uppercase tracking-wider">Strategic Command</p>
+</div>
+</div>
+<button class="mt-6 w-full py-2 px-4 bg-surface-elevated border border-surface-stroke text-text-primary font-button-text text-button-text rounded-DEFAULT hover:border-accent-gold hover:text-accent-gold transition-colors duration-150 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                New Operation
+            </button>
+</div>
+<!-- Navigation Links -->
+<div class="flex-1 overflow-y-auto custom-scrollbar flex flex-col gap-1 px-2">
+<!-- Inactive -->
+<a class="flex items-center gap-3 text-slate-400 py-3 px-4 hover:bg-slate-900/50 hover:text-slate-100 transition-all duration-200 rounded-DEFAULT group" href="#">
+<span class="material-symbols-outlined group-hover:text-amber-400 transition-colors duration-150">dashboard</span>
+<span class="font-manrope text-xs font-bold uppercase tracking-widest">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 py-3 px-4 hover:bg-slate-900/50 hover:text-slate-100 transition-all duration-200 rounded-DEFAULT group" href="#">
+<span class="material-symbols-outlined group-hover:text-amber-400 transition-colors duration-150">group</span>
+<span class="font-manrope text-xs font-bold uppercase tracking-widest">Roster</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 py-3 px-4 hover:bg-slate-900/50 hover:text-slate-100 transition-all duration-200 rounded-DEFAULT group" href="#">
+<span class="material-symbols-outlined group-hover:text-amber-400 transition-colors duration-150">event</span>
+<span class="font-manrope text-xs font-bold uppercase tracking-widest">Events</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 py-3 px-4 hover:bg-slate-900/50 hover:text-slate-100 transition-all duration-200 rounded-DEFAULT group" href="#">
+<span class="material-symbols-outlined group-hover:text-amber-400 transition-colors duration-150">calculate</span>
+<span class="font-manrope text-xs font-bold uppercase tracking-widest">Calculators</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 py-3 px-4 hover:bg-slate-900/50 hover:text-slate-100 transition-all duration-200 rounded-DEFAULT group" href="#">
+<span class="material-symbols-outlined group-hover:text-amber-400 transition-colors duration-150">menu_book</span>
+<span class="font-manrope text-xs font-bold uppercase tracking-widest">Knowledge Base</span>
+</a>
+<!-- Active -->
+<a class="flex items-center gap-3 bg-slate-900 text-amber-500 border-l-2 border-amber-500 py-3 px-4 rounded-r-DEFAULT active:scale-[0.98] transform transition-transform" href="#">
+<span class="material-symbols-outlined icon-fill">admin_panel_settings</span>
+<span class="font-manrope text-xs font-bold uppercase tracking-widest">Admin</span>
+</a>
+</div>
+<!-- User Profile Area -->
+<div class="mt-auto p-4 border-t border-surface-stroke">
+<div class="flex items-center gap-3 px-2">
+<div class="w-8 h-8 rounded-full bg-surface-elevated overflow-hidden border border-accent-gold/30">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="Portrait of a serious man in tactical dark clothing looking forward in dramatic studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC7xQkOoN3uIMLc-MsO93e1XlZQSWL_5darcgJJXQmxuJlBUceuxThtUvaHJg8XM40qlrFiZzle85vPcrGvij-29v4mc8oAsqEs3wElzCi4TqXluhghyN6kMJAtEbqo3n_2KscVmO9W3Begb1ulr96MO0xmIRsMOR4mG2bzZy9ppHdJiIiRqudZMeYCZUiKvccJYnabwb677zvI3WnSHl6XC6f__PSTOqYjY1oTZwtkoEk11Bx5aA_8hfozQomDV0hVaHATbvAG4eh"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-metadata font-metadata text-text-primary truncate">Commander Shepard</p>
+<p class="text-[10px] font-metadata text-accent-gold uppercase tracking-wider">R5 Leader</p>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col md:ml-64 w-full bg-tactical-grid">
+<!-- TopAppBar (Shared Component) -->
+<header class="flex justify-between items-center px-6 h-16 w-full sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md dark:bg-slate-950/90 border-b border-slate-800 shadow-none">
+<!-- Left: Brand/Product Name -->
+<div class="flex items-center">
+<span class="font-manrope tracking-tight text-lg font-black tracking-widest text-slate-100 uppercase">COMMAND CENTER</span>
+</div>
+<!-- Right: Search & Actions -->
+<div class="flex items-center gap-4">
+<!-- Search Bar (on_right) -->
+<div class="hidden sm:flex relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-amber-500 transition-colors text-[18px]">search</span>
+<input class="w-64 bg-surface-elevated/50 border border-slate-800 rounded-DEFAULT py-1.5 pl-9 pr-4 text-metadata font-metadata text-slate-100 placeholder-slate-500 focus:outline-none focus:border-amber-500/50 focus:bg-surface-elevated transition-all" placeholder="Query database..." type="text"/>
+</div>
+<!-- Trailing Icons -->
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 rounded flex items-center justify-center text-slate-400 hover:text-amber-400 transition-colors duration-150 active:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="w-8 h-8 rounded flex items-center justify-center text-slate-400 hover:text-amber-400 transition-colors duration-150 active:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<main class="flex-1 p-6 md:p-8 overflow-y-auto custom-scrollbar">
+<!-- Page Header -->
+<div class="mb-section-gap flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<div class="inline-flex items-center gap-2 px-2 py-1 rounded bg-accent-crimson/10 border border-accent-crimson/20 mb-3">
+<span class="material-symbols-outlined text-[14px] text-accent-crimson icon-fill">gpp_bad</span>
+<span class="font-metadata text-metadata text-accent-crimson uppercase tracking-widest">Restricted Access: R4/R5 Clearance Required</span>
+</div>
+<h1 class="font-h1-display text-h1-display text-text-primary">Admin Control Panel</h1>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 bg-surface border border-surface-stroke rounded-DEFAULT text-text-primary font-button-text text-button-text hover:border-accent-ice hover:text-accent-ice transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                        Export Data
+                    </button>
+<button class="px-4 py-2 bg-accent-gold text-surface-dim border border-accent-gold rounded-DEFAULT font-button-text text-button-text hover:bg-tertiary-fixed transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] icon-fill">save</span>
+                        Save Global State
+                    </button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-stack-md">
+<!-- Widget: High-Level Analytics (Spans 2 cols) -->
+<div class="xl:col-span-2 bg-surface border border-surface-stroke rounded-xl flex flex-col overflow-hidden relative">
+<!-- Subtle background glow -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-accent-gold/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
+<div class="p-card-padding border-b border-surface-stroke flex justify-between items-center bg-surface-elevated/50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-gold">monitoring</span>
+<h3 class="font-h3-card text-h3-card text-text-primary">Alliance Progression</h3>
+</div>
+<select class="bg-surface-dim border border-surface-stroke rounded text-metadata font-metadata text-text-secondary py-1 pl-2 pr-8 focus:border-accent-gold focus:ring-0">
+<option>Last 30 Days</option>
+<option>Last 7 Days</option>
+<option>Current Season</option>
+</select>
+</div>
+<div class="p-card-padding flex-1 flex flex-col gap-6">
+<!-- Key Metrics -->
+<div class="grid grid-cols-3 gap-4">
+<div class="p-4 bg-surface-dim border border-surface-stroke rounded-lg">
+<p class="font-metadata text-metadata text-text-secondary mb-1 uppercase tracking-wider">Total Power</p>
+<p class="font-h2-section text-h2-section text-text-primary font-mono">4.28B</p>
+<div class="flex items-center gap-1 mt-2 text-status-success font-metadata text-[10px]">
+<span class="material-symbols-outlined text-[12px]">trending_up</span>
+<span>+12.4M this week</span>
+</div>
+</div>
+<div class="p-4 bg-surface-dim border border-surface-stroke rounded-lg">
+<p class="font-metadata text-metadata text-text-secondary mb-1 uppercase tracking-wider">Event Participation</p>
+<p class="font-h2-section text-h2-section text-text-primary font-mono">87%</p>
+<div class="flex items-center gap-1 mt-2 text-status-warning font-metadata text-[10px]">
+<span class="material-symbols-outlined text-[12px]">trending_down</span>
+<span>-2% from last event</span>
+</div>
+</div>
+<div class="p-4 bg-surface-dim border border-surface-stroke rounded-lg">
+<p class="font-metadata text-metadata text-text-secondary mb-1 uppercase tracking-wider">Active Members</p>
+<p class="font-h2-section text-h2-section text-text-primary font-mono">98<span class="text-text-secondary text-lg">/100</span></p>
+<div class="flex items-center gap-1 mt-2 text-text-secondary font-metadata text-[10px]">
+<span class="material-symbols-outlined text-[12px]">group</span>
+<span>Near capacity</span>
+</div>
+</div>
+</div>
+<!-- Mock Chart Area -->
+<div class="flex-1 min-h-[200px] border border-surface-stroke/50 rounded-lg bg-surface-dim relative overflow-hidden flex items-end">
+<!-- Grid lines -->
+<div class="absolute inset-0 flex flex-col justify-between opacity-10 pointer-events-none p-4">
+<div class="w-full border-b border-white"></div>
+<div class="w-full border-b border-white"></div>
+<div class="w-full border-b border-white"></div>
+<div class="w-full border-b border-white"></div>
+</div>
+<!-- Fake Area Chart -->
+<div class="w-full h-[60%] bg-gradient-to-t from-accent-gold/20 to-transparent relative border-t-2 border-accent-gold" style="clip-path: polygon(0 100%, 0 60%, 10% 50%, 20% 55%, 30% 40%, 40% 45%, 50% 20%, 60% 30%, 70% 15%, 80% 25%, 90% 5%, 100% 10%, 100% 100%);"></div>
+</div>
+</div>
+</div>
+<!-- Widget: Member Approval Queue -->
+<div class="bg-surface border border-surface-stroke rounded-xl flex flex-col h-full max-h-[500px]">
+<div class="p-card-padding border-b border-surface-stroke flex justify-between items-center bg-surface-elevated/50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-ice">group_add</span>
+<h3 class="font-h3-card text-h3-card text-text-primary">Approval Queue</h3>
+</div>
+<span class="px-2 py-0.5 rounded bg-accent-gold/10 text-accent-gold font-metadata text-[10px] border border-accent-gold/20">3 PENDING</span>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar p-2">
+<!-- Applicant Item -->
+<div class="p-3 border-b border-surface-stroke/50 hover:bg-surface-elevated/30 transition-colors flex items-center gap-3 group">
+<div class="w-10 h-10 rounded bg-surface-dim border border-surface-stroke overflow-hidden flex-shrink-0">
+<img alt="Applicant Avatar" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Close up portrait of a serious gamer in dark lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1bouuVjaV4Pwj8QDADPpzZUfC5uWKZHfpvoDPT3gaA8KY9rZsQvcNZLlxhMpm8dASN8YFd2kqeOZrh382qVEuVIspgsSVIs6P_ZgcwXuuJHDitEuARyjoDW-Mg_CRsfOlvy1yByNfzuAp6KrP1NABwPN_FpnjbwSjW1_7K7fthjR2x2CAG2ZVo5p8uZL8JRnrLCOmg4cQxFZWdWOulYXiGUCE4nfe6jgS5sNHiXd_4v33EFWX9pt36KMaxHbUSH2_0fTW85ZWikNb"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-body-md text-body-md text-accent-ice font-semibold truncate">xX_ShadowSniper_Xx</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="text-[10px] font-mono text-text-secondary bg-surface-dim px-1 py-0.5 border border-surface-stroke rounded">PWR: 12.5M</span>
+<span class="text-[10px] text-text-secondary font-metadata">Lvl 24 HQ</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<button class="w-7 h-7 rounded bg-surface-dim border border-surface-stroke flex items-center justify-center text-status-success hover:bg-status-success/10 hover:border-status-success transition-colors">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</button>
+<button class="w-7 h-7 rounded bg-surface-dim border border-surface-stroke flex items-center justify-center text-accent-crimson hover:bg-accent-crimson/10 hover:border-accent-crimson transition-colors">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+<!-- Applicant Item -->
+<div class="p-3 border-b border-surface-stroke/50 hover:bg-surface-elevated/30 transition-colors flex items-center gap-3 group">
+<div class="w-10 h-10 rounded bg-surface-dim border border-surface-stroke overflow-hidden flex-shrink-0">
+<img alt="Applicant Avatar" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="Portrait of a young woman with intense expression in moody blue lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIYTTiYm4cm6zALshcxy2WID1PSgkvk3bL_6arYNkUShxq_cCTWalrhGklrjadbgZgAkACtl7ow2yokjEZyrYS1Az5gHQPLsVtdUCADRIwtBeKGQQaP44WHZcaWkPbFph6c8xyL7eVGr0NYrz2a93IKXBS0vgPo9gGQCnhFvcALUzgZB8Au_7h61vTDIkzNkm5xMZZJFZFPP1xh8ucPQ3fEVTbvg0KTIc78nVTiVZR_EFYhgkahDZqog4FMbCeaZYHZDa8okmtE_Wt"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-body-md text-body-md text-accent-ice font-semibold truncate">IronMaiden_99</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="text-[10px] font-mono text-text-secondary bg-surface-dim px-1 py-0.5 border border-surface-stroke rounded text-status-warning">PWR: 4.2M</span>
+<span class="text-[10px] text-text-secondary font-metadata">Lvl 18 HQ</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<button class="w-7 h-7 rounded bg-surface-dim border border-surface-stroke flex items-center justify-center text-status-success hover:bg-status-success/10 hover:border-status-success transition-colors">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</button>
+<button class="w-7 h-7 rounded bg-surface-dim border border-surface-stroke flex items-center justify-center text-accent-crimson hover:bg-accent-crimson/10 hover:border-accent-crimson transition-colors">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+</div>
+<div class="p-3 border-t border-surface-stroke bg-surface-elevated/30">
+<button class="w-full py-1.5 text-center font-metadata text-metadata text-text-secondary hover:text-text-primary transition-colors">View All Applicants</button>
+</div>
+</div>
+<!-- Widget: Alliance-Wide Settings (Spans 2 cols on wide screens if needed, keeping 1 here for bento) -->
+<div class="xl:col-span-2 bg-surface border border-surface-stroke rounded-xl flex flex-col">
+<div class="p-card-padding border-b border-surface-stroke flex items-center gap-2 bg-surface-elevated/50">
+<span class="material-symbols-outlined text-text-secondary">settings_suggest</span>
+<h3 class="font-h3-card text-h3-card text-text-primary">Global Parameters</h3>
+</div>
+<div class="p-card-padding grid grid-cols-1 md:grid-cols-2 gap-stack-md flex-1">
+<!-- Heatmap Settings -->
+<div class="bg-surface-elevated border border-surface-stroke rounded-lg p-4 flex flex-col">
+<h4 class="font-body-lg text-body-lg text-text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-status-warning">map</span>
+                                Territorial Heatmap
+                            </h4>
+<div class="space-y-4">
+<div>
+<label class="block font-metadata text-metadata text-text-secondary mb-1">Target Coordinates (X, Y)</label>
+<div class="flex gap-2">
+<input class="w-full bg-surface-dim border border-surface-stroke rounded px-3 py-1.5 text-body-md font-mono text-text-primary focus:border-accent-gold focus:outline-none" type="text" value="452"/>
+<input class="w-full bg-surface-dim border border-surface-stroke rounded px-3 py-1.5 text-body-md font-mono text-text-primary focus:border-accent-gold focus:outline-none" type="text" value="891"/>
+</div>
+</div>
+<div>
+<label class="block font-metadata text-metadata text-text-secondary mb-1">Priority Level</label>
+<div class="flex rounded-DEFAULT border border-surface-stroke overflow-hidden">
+<button class="flex-1 py-1.5 bg-surface-dim text-text-secondary font-metadata text-[12px] hover:bg-surface transition-colors">Low</button>
+<button class="flex-1 py-1.5 bg-surface-dim border-l border-r border-surface-stroke text-text-secondary font-metadata text-[12px] hover:bg-surface transition-colors">Medium</button>
+<button class="flex-1 py-1.5 bg-status-warning/20 text-status-warning border-l border-status-warning/50 font-metadata text-[12px] font-bold">CRITICAL</button>
+</div>
+</div>
+<div class="mt-auto pt-2">
+<button class="w-full py-2 bg-surface-dim border border-surface-stroke rounded text-text-primary font-button-text text-[12px] hover:border-status-warning hover:text-status-warning transition-colors">Broadcast Coordinates</button>
+</div>
+</div>
+</div>
+<!-- Announcement Editor -->
+<div class="bg-surface-elevated border border-surface-stroke rounded-lg p-4 flex flex-col">
+<h4 class="font-body-lg text-body-lg text-text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-accent-ice">campaign</span>
+                                Priority Notice
+                            </h4>
+<div class="flex-1 flex flex-col space-y-3">
+<div>
+<input class="w-full bg-surface-dim border border-surface-stroke rounded px-3 py-1.5 text-body-md text-text-primary font-bold focus:border-accent-gold focus:outline-none" type="text" value="MANDATORY GARRISON DEPLOYMENT"/>
+</div>
+<div class="flex-1">
+<textarea class="w-full h-full min-h-[80px] bg-surface-dim border border-surface-stroke rounded px-3 py-2 text-metadata font-body-md text-text-secondary focus:border-accent-gold focus:outline-none resize-none">All members must relocate HQ to Sector 4 by 1800h UTC for defensive formation.</textarea>
+</div>
+<div class="flex items-center justify-between pt-1">
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="form-checkbox bg-surface-dim border-surface-stroke text-accent-gold rounded-sm focus:ring-accent-gold focus:ring-offset-surface" type="checkbox"/>
+<span class="font-metadata text-metadata text-text-secondary">Pin to Roster Dashboard</span>
+</label>
+<button class="px-3 py-1.5 bg-surface border border-surface-stroke rounded text-text-primary font-button-text text-[12px] hover:bg-surface-bright transition-colors">Publish</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Widget: Security Logs -->
+<div class="bg-surface border border-surface-stroke rounded-xl flex flex-col">
+<div class="p-card-padding border-b border-surface-stroke flex items-center gap-2 bg-surface-elevated/50">
+<span class="material-symbols-outlined text-text-secondary">history</span>
+<h3 class="font-h3-card text-h3-card text-text-primary">Command Logs</h3>
+</div>
+<div class="p-2 flex-1 overflow-y-auto custom-scrollbar">
+<table class="w-full text-left border-collapse">
+<tbody>
+<tr class="border-b border-surface-stroke/50 hover:bg-surface-elevated/30">
+<td class="py-2 pl-2 w-16 text-text-secondary font-metadata text-[10px]">10:42Z</td>
+<td class="py-2 px-1 text-accent-ice font-metadata text-[11px] truncate max-w-[80px]">CmdrShepard</td>
+<td class="py-2 pr-2 text-text-primary font-metadata text-[11px]">Updated Heatmap</td>
+</tr>
+<tr class="border-b border-surface-stroke/50 hover:bg-surface-elevated/30">
+<td class="py-2 pl-2 text-text-secondary font-metadata text-[10px]">09:15Z</td>
+<td class="py-2 px-1 text-accent-gold font-metadata text-[11px] truncate max-w-[80px]">Valkyrie</td>
+<td class="py-2 pr-2 text-text-primary font-metadata text-[11px]">Promoted Member to R3</td>
+</tr>
+<tr class="border-b border-surface-stroke/50 hover:bg-surface-elevated/30">
+<td class="py-2 pl-2 text-text-secondary font-metadata text-[10px]">08:30Z</td>
+<td class="py-2 px-1 text-accent-ice font-metadata text-[11px] truncate max-w-[80px]">CmdrShepard</td>
+<td class="py-2 pr-2 text-text-primary font-metadata text-[11px]">Approved Application</td>
+</tr>
+<tr class="border-b border-surface-stroke/50 hover:bg-surface-elevated/30">
+<td class="py-2 pl-2 text-text-secondary font-metadata text-[10px]">02:11Z</td>
+<td class="py-2 px-1 text-accent-gold font-metadata text-[11px] truncate max-w-[80px]">Valkyrie</td>
+<td class="py-2 pr-2 text-status-warning font-metadata text-[11px]">Expelled Member</td>
+</tr>
+<tr class="hover:bg-surface-elevated/30">
+<td class="py-2 pl-2 text-text-secondary font-metadata text-[10px]">01:05Z</td>
+<td class="py-2 px-1 text-text-muted font-metadata text-[11px] truncate max-w-[80px]">System</td>
+<td class="py-2 pr-2 text-text-primary font-metadata text-[11px]">Automated Backup</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

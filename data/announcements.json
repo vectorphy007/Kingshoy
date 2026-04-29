@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1",
+    "title": "Welcome to Kingshot Alliance Command",
+    "body": "Use the roster tools to submit and manage alliance member stats. Leadership reviews all submissions.",
+    "type": "info",
+    "createdAt": "2026-04-29T12:00:00Z",
+    "updatedAt": "2026-04-29T12:00:00Z"
+  },
+  {
+    "id": "ann_1777462535214",
+    "title": "Alliance Bear Hunt",
+    "body": "Bear Hunt this Saturday at 20:00 UTC. All members must participate.",
+    "type": "warning",
+    "createdAt": "2026-04-29T11:35:35.214Z",
+    "updatedAt": "2026-04-29T11:35:35.214Z"
+  }
+]

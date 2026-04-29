@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Global Search - Command Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ffe088",
+                        "surface-bright": "#3a3939",
+                        "surface-variant": "#353435",
+                        "on-primary-fixed": "#1a1c20",
+                        "on-secondary": "#2d3038",
+                        "status-warning": "#B45309",
+                        "on-background": "#e5e2e1",
+                        "accent-amber": "#FFBF00",
+                        "text-secondary": "#94A3B8",
+                        "on-primary-fixed-variant": "#45474b",
+                        "accent-crimson": "#9E1B1B",
+                        "secondary": "#c4c6d0",
+                        "surface-dim": "#141314",
+                        "inverse-on-surface": "#313030",
+                        "tertiary-container": "#171000",
+                        "text-muted": "#64748B",
+                        "on-secondary-fixed-variant": "#44474e",
+                        "on-error": "#690005",
+                        "secondary-fixed-dim": "#c4c6d0",
+                        "secondary-fixed": "#e0e2ec",
+                        "inverse-primary": "#5d5e63",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "surface-tint": "#c6c6cc",
+                        "outline": "#909095",
+                        "surface-stroke": "#2D333D",
+                        "primary-container": "#0f1115",
+                        "surface-base": "#0F1115",
+                        "on-surface": "#e5e2e1",
+                        "accent-gold": "#D4AF37",
+                        "on-surface-variant": "#c6c6cb",
+                        "on-primary-container": "#7b7c82",
+                        "primary-fixed": "#e2e2e8",
+                        "on-secondary-fixed": "#191c22",
+                        "on-secondary-container": "#b6b8c1",
+                        "background": "#141314",
+                        "surface-container-low": "#1c1b1c",
+                        "tertiary": "#e9c349",
+                        "status-success": "#2D5A27",
+                        "surface-elevated": "#1C1F26",
+                        "on-primary": "#2f3035",
+                        "accent-ice": "#7895B2",
+                        "primary-fixed-dim": "#c6c6cc",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-tertiary-container": "#987900",
+                        "error": "#ffb4ab",
+                        "surface-container-high": "#2a2a2a",
+                        "primary": "#c6c6cc",
+                        "inverse-surface": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "surface": "#141314",
+                        "text-primary": "#F1F5F9",
+                        "surface-container-highest": "#353435",
+                        "on-tertiary": "#3c2f00",
+                        "on-error-container": "#ffdad6",
+                        "surface-container": "#201f20",
+                        "outline-variant": "#45474b",
+                        "secondary-container": "#464951"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "card-padding": "20px",
+                        "section-gap": "48px",
+                        "container-max-width": "1440px",
+                        "gutter": "24px",
+                        "stack-gap-sm": "8px",
+                        "stack-gap-md": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "h2-section": ["Manrope"],
+                        "body-lg": ["Inter"],
+                        "h3-card": ["Manrope"],
+                        "metadata": ["Inter"],
+                        "h1-display": ["Manrope"],
+                        "button-text": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "h2-section": ["24px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "h3-card": ["18px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "metadata": ["12px", { "lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "h1-display": ["36px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "button-text": ["14px", { "lineHeight": "1", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex antialiased">
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-0 h-full flex flex-col z-40 bg-slate-950 dark:bg-slate-950 h-screen w-64 border-r border-slate-800 hidden md:flex">
+<!-- Header -->
+<div class="p-6 flex items-center gap-4 border-b border-surface-stroke mb-4">
+<img alt="Alliance Logo" class="w-10 h-10 rounded-lg border border-surface-stroke object-cover" data-alt="metallic geometric shield emblem glowing with subtle amber light on dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCORehSo1u_WlcextKB_YLi6v1xhcF0Z6W1KM05Bcez0CyT7eZvr-EvQmTyQmLrbBJnN9mM7l1PSSs-Vk7u0kOpETAHDY3TxtV7t_gWc1Gxzjvh7BM8Q3cHa8riFYoUENgOjwuIUSkm-CbwL-pOHcuAeU-Yo6Z-RCKD4rk-kDJBET18wERS9hVLSAnlYnF56ndyVx4NqdhWMPJyt3nh4vi1xk1VpFjgYtlW1Xi1u1GL9p6zwglkGG-1iP-1YOcDltShL7fP9592BbL3"/>
+<div>
+<h1 class="font-manrope text-xs font-bold uppercase tracking-widest text-amber-500 dark:text-amber-400">VANGUARD</h1>
+<p class="font-metadata text-metadata text-text-secondary">Strategic Command</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="flex-1 overflow-y-auto px-2 space-y-1">
+<a class="flex items-center gap-3 text-slate-400 py-3 px-4 hover:bg-slate-900/50 hover:text-slate-100 hover:bg-slate-900 transition-all duration-200 font-manrope text-xs font-bold uppercase tracking-widest active:scale-[0.98] transform transition-transform rounded-md" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 text-slate-400 py-3 px-4 hover:bg-slate-900/50 hover:text-slate-100 hover:bg-slate-900 transition-all duration-200 font-manrope text-xs font-bold uppercase tracking-widest active:scale-[0.98] transform transition-transform rounded-md" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+                Roster
+            </a>
+<a class="flex items-center gap-3 text-slate-400 py-3 px-4 hover:bg-slate-900/50 hover:text-slate-100 hover:bg-slate-900 transition-all duration-200 font-manrope text-xs font-bold uppercase tracking-widest active:scale-[0.98] transform transition-transform rounded-md" href="#">
+<span class="material-symbols-outlined text-[20px]">event</span>
+                Events
+            </a>
+<a class="flex items-center gap-3 text-slate-400 py-3 px-4 hover:bg-slate-900/50 hover:text-slate-100 hover:bg-slate-900 transition-all duration-200 font-manrope text-xs font-bold uppercase tracking-widest active:scale-[0.98] transform transition-transform rounded-md" href="#">
+<span class="material-symbols-outlined text-[20px]">calculate</span>
+                Calculators
+            </a>
+<a class="flex items-center gap-3 text-slate-400 py-3 px-4 hover:bg-slate-900/50 hover:text-slate-100 hover:bg-slate-900 transition-all duration-200 font-manrope text-xs font-bold uppercase tracking-widest active:scale-[0.98] transform transition-transform rounded-md" href="#">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+                Knowledge Base
+            </a>
+<a class="flex items-center gap-3 text-slate-400 py-3 px-4 hover:bg-slate-900/50 hover:text-slate-100 hover:bg-slate-900 transition-all duration-200 font-manrope text-xs font-bold uppercase tracking-widest active:scale-[0.98] transform transition-transform rounded-md" href="#">
+<span class="material-symbols-outlined text-[20px]">admin_panel_settings</span>
+                Admin
+            </a>
+</div>
+<!-- CTA -->
+<div class="p-6 mt-auto">
+<button class="w-full bg-surface-elevated border border-surface-stroke text-on-surface py-2.5 rounded hover:border-accent-gold transition-colors duration-200 font-button-text text-button-text shadow-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                New Operation
+            </button>
+</div>
+</nav>
+<!-- Main Wrapper -->
+<div class="flex-1 flex flex-col md:ml-64 min-w-0">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-6 h-16 w-full sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md dark:bg-slate-950/90 border-b border-slate-800 shadow-none font-manrope tracking-tight text-slate-100 dark:text-slate-100">
+<div class="flex items-center gap-4">
+<!-- Mobile Menu Trigger -->
+<button class="md:hidden text-slate-400 hover:text-amber-400 transition-colors duration-150 active:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="text-lg font-black tracking-widest text-slate-100 uppercase hidden sm:block">COMMAND CENTER</div>
+</div>
+<!-- Search Bar Area -->
+<div class="flex-1 max-w-xl mx-6 relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-text-secondary text-[20px]">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2 border border-accent-gold bg-surface-dim rounded-md text-on-surface placeholder-text-muted focus:outline-none focus:ring-1 focus:ring-accent-gold focus:border-accent-gold sm:text-sm transition-all duration-150" placeholder="Search Intel..." type="text" value="Amadeus"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-slate-400 hover:text-amber-400 transition-colors duration-150 active:opacity-80 transition-opacity flex items-center justify-center relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-accent-amber rounded-full"></span>
+</button>
+<button class="text-slate-400 hover:text-amber-400 transition-colors duration-150 active:opacity-80 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-8 w-8 rounded-full border border-surface-stroke overflow-hidden ml-2">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="close up portrait of a serious male commander in dark tactical gear with moody rim lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYQ_7pk8ErpXi3WJL3dtALS3P8pu7Ij8DO_mKcZCcPQQjuELASmsQc8s0QMAAqbGI864Z2jp7cce39gGtEvCm0r6r209F-dMCRGhmqEKL7NV3m7CbRotdk8up3m_dw3ITHk2v3S_kve9ZpyJgT2Z-7DBzDGxqRJD-cofFVZUW8eeXb5txX-uYa4cGHeU831qb70o6j47JoGrhOE_vIguN2hq1GelyWKBPamVpa_9iqoxVAJRpyl27m1WG5__557VPOQkXPj7aLCLyI"/>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto p-section-gap">
+<div class="max-w-[1440px] mx-auto space-y-section-gap">
+<!-- Search Header -->
+<div class="border-b border-surface-stroke pb-6">
+<p class="font-metadata text-metadata text-text-secondary uppercase tracking-widest mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">travel_explore</span>
+                        Global Intel Search
+                    </p>
+<h1 class="font-h1-display text-h1-display text-on-surface flex items-baseline gap-3">
+                        Results for 
+                        <span class="text-accent-gold bg-accent-gold/10 px-3 py-1 rounded-lg border border-accent-gold/30">"Amadeus"</span>
+</h1>
+<p class="font-body-md text-body-md text-text-secondary mt-3">Found 14 relevant records across Roster, Knowledge Base, and Tools.</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter">
+<!-- Members Column (Roster) -->
+<div class="xl:col-span-7 space-y-4">
+<div class="flex items-center justify-between mb-2">
+<h2 class="font-h2-section text-h2-section text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-ice">group</span>
+                                Members
+                            </h2>
+<span class="bg-surface-elevated text-text-secondary font-metadata text-metadata px-2 py-1 rounded border border-surface-stroke">8 Matches</span>
+</div>
+<!-- Roster Table Card -->
+<div class="bg-surface-elevated border border-surface-stroke rounded-xl overflow-hidden shadow-sm">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-dim border-b border-surface-stroke">
+<th class="py-3 px-4 font-metadata text-metadata text-text-secondary uppercase font-semibold">Commander</th>
+<th class="py-3 px-4 font-metadata text-metadata text-text-secondary uppercase font-semibold">Rank</th>
+<th class="py-3 px-4 font-metadata text-metadata text-text-secondary uppercase font-semibold">Power Level</th>
+<th class="py-3 px-4 font-metadata text-metadata text-text-secondary uppercase font-semibold text-right">Hero Level</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-on-surface">
+<!-- R5 Row -->
+<tr class="border-b border-surface-stroke hover:bg-surface-dim/50 transition-colors border-l-2 border-l-accent-gold bg-accent-gold/5">
+<td class="py-3 px-4 flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-dim border border-surface-stroke flex items-center justify-center text-accent-gold font-bold text-xs">V1</div>
+<span class="font-medium">ApexPredator</span>
+</td>
+<td class="py-3 px-4"><span class="bg-accent-gold/20 text-accent-gold text-[10px] font-bold px-2 py-0.5 rounded border border-accent-gold/30">R5</span></td>
+<td class="py-3 px-4 font-mono text-sm">145,200,000</td>
+<td class="py-3 px-4 text-right">
+<div class="inline-flex items-center gap-1 bg-surface-dim border border-surface-stroke px-2 py-1 rounded text-accent-gold">
+<span class="material-symbols-outlined text-[14px]">military_tech</span>
+<span>60</span>
+</div>
+</td>
+</tr>
+<!-- R4 Row -->
+<tr class="border-b border-surface-stroke hover:bg-surface-dim/50 transition-colors">
+<td class="py-3 px-4 flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-dim border border-surface-stroke flex items-center justify-center text-accent-ice font-bold text-xs">O2</div>
+<span class="font-medium text-accent-ice">IronWall_Mike</span>
+</td>
+<td class="py-3 px-4"><span class="text-accent-ice font-bold text-xs">R4</span></td>
+<td class="py-3 px-4 font-mono text-sm">98,500,000</td>
+<td class="py-3 px-4 text-right">
+<div class="inline-flex items-center gap-1 bg-surface-dim border border-surface-stroke px-2 py-1 rounded text-on-surface">
+<span class="material-symbols-outlined text-[14px]">military_tech</span>
+<span>58</span>
+</div>
+</td>
+</tr>
+<!-- Standard Rows -->
+<tr class="border-b border-surface-stroke hover:bg-surface-dim/50 transition-colors">
+<td class="py-3 px-4 flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-dim border border-surface-stroke flex items-center justify-center text-text-secondary font-bold text-xs">S3</div>
+<span>SilentShadow</span>
+</td>
+<td class="py-3 px-4"><span class="text-text-secondary text-xs">R3</span></td>
+<td class="py-3 px-4 font-mono text-sm">45,100,000</td>
+<td class="py-3 px-4 text-right font-mono text-sm">50</td>
+</tr>
+</tbody>
+</table>
+<div class="p-3 bg-surface-dim text-center border-t border-surface-stroke">
+<a class="text-accent-gold font-button-text text-button-text hover:text-amber-300 transition-colors" href="#">View All 8 Members</a>
+</div>
+</div>
+</div>
+<!-- Side Columns Container -->
+<div class="xl:col-span-5 flex flex-col gap-section-gap">
+<!-- Guides Column (Knowledge Base) -->
+<div class="space-y-4">
+<div class="flex items-center justify-between mb-2">
+<h2 class="font-h2-section text-h2-section text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">menu_book</span>
+                                    Guides
+                                </h2>
+<span class="bg-surface-elevated text-text-secondary font-metadata text-metadata px-2 py-1 rounded border border-surface-stroke">4 Matches</span>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<!-- Guide Card 1 -->
+<a class="block bg-surface-elevated border border-surface-stroke rounded-xl p-card-padding hover:border-accent-ice transition-colors group relative overflow-hidden" href="#">
+<div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-accent-ice/10 to-transparent rounded-bl-3xl"></div>
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded bg-surface-dim border border-surface-stroke flex items-center justify-center text-accent-ice shrink-0">
+<span class="material-symbols-outlined">library_books</span>
+</div>
+<div>
+<h3 class="font-h3-card text-h3-card text-on-surface mb-1 group-hover:text-accent-ice transition-colors">
+                                                Optimizing <span class="text-accent-gold bg-accent-gold/10 px-1 rounded">Amadeus</span> Skill Trees
+                                            </h3>
+<p class="font-body-md text-body-md text-text-secondary line-clamp-2">A comprehensive breakdown of the best talent pathing for infantry-focused rallies utilizing <span class="text-accent-gold">Amadeus</span> as primary.</p>
+<div class="mt-3 flex items-center gap-3">
+<span class="bg-surface-dim text-text-secondary font-metadata text-[10px] uppercase px-2 py-0.5 rounded border border-surface-stroke">Infantry</span>
+<span class="font-metadata text-[10px] text-text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">schedule</span> Updated 2d ago</span>
+</div>
+</div>
+</div>
+</a>
+<!-- Guide Card 2 -->
+<a class="block bg-surface-elevated border border-surface-stroke rounded-xl p-card-padding hover:border-accent-ice transition-colors group" href="#">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded bg-surface-dim border border-surface-stroke flex items-center justify-center text-text-secondary shrink-0">
+<span class="material-symbols-outlined">people</span>
+</div>
+<div>
+<h3 class="font-h3-card text-h3-card text-on-surface mb-1 group-hover:text-accent-ice transition-colors">
+                                                Best Hero Pairings for <span class="text-accent-gold bg-accent-gold/10 px-1 rounded">Amadeus</span>
+</h3>
+<p class="font-body-md text-body-md text-text-secondary line-clamp-1">Explore synergy metrics when pairing with secondary commanders.</p>
+</div>
+</div>
+</a>
+</div>
+</div>
+<!-- Tools Column (Calculators) -->
+<div class="space-y-4">
+<div class="flex items-center justify-between mb-2">
+<h2 class="font-h2-section text-h2-section text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-status-warning">build</span>
+                                    Tools
+                                </h2>
+<span class="bg-surface-elevated text-text-secondary font-metadata text-metadata px-2 py-1 rounded border border-surface-stroke">2 Matches</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Tool Widget 1 -->
+<div class="bg-surface-elevated border border-surface-stroke rounded-xl p-card-padding flex flex-col items-center text-center hover:bg-surface-dim transition-colors cursor-pointer group">
+<div class="w-10 h-10 rounded-full bg-status-warning/10 text-status-warning flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">calculate</span>
+</div>
+<h3 class="font-button-text text-button-text text-on-surface mb-1"><span class="text-accent-gold">Amadeus</span> EXP Calc</h3>
+<p class="font-metadata text-[10px] text-text-secondary">Tome requirements</p>
+</div>
+<!-- Tool Widget 2 -->
+<div class="bg-surface-elevated border border-surface-stroke rounded-xl p-card-padding flex flex-col items-center text-center hover:bg-surface-dim transition-colors cursor-pointer group">
+<div class="w-10 h-10 rounded-full bg-status-warning/10 text-status-warning flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">speed</span>
+</div>
+<h3 class="font-button-text text-button-text text-on-surface mb-1">March Simulator</h3>
+<p class="font-metadata text-[10px] text-text-secondary">Includes <span class="text-accent-gold">Amadeus</span> buffs</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

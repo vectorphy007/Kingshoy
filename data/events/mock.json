@@ -1,0 +1,10 @@
+[
+  {
+    "id": "e1",
+    "name": "Bear Hunt",
+    "type": "bear-hunt",
+    "description": "Defeat the bear.",
+    "startTimeUTC": "2026-04-29T19:00:00Z",
+    "endTimeUTC": "2026-04-29T20:00:00Z"
+  }
+]
